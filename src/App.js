@@ -213,26 +213,45 @@ function App() {
 
       <Swiper
         modules={[Navigation, Scrollbar]}
-        spaceBetween={50}
+        spaceBetween={0}
         slidesPerView={1}
         navigation={true}
       >
         <SwiperSlide>
-          <img src="/assets/img/banner/img-1.jpg" alt="car" />
+          <img
+            className="slide-photo"
+            src="/assets/img/banner/car-01.jpg"
+            alt="car"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/assets/img/banner/img-3.jpg" alt="car" />
+          <img
+            className="slide-photo"
+            src="/assets/img/banner/car-02.jpg"
+            alt="car"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/assets/img/banner/img-4.jpg" alt="car" />
+          <img
+            className="slide-photo"
+            src="/assets/img/banner/car-03.jpg"
+            alt="car"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/assets/img/banner/img-5.jpg" alt="car" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/assets/img/banner/img-6.jpg" alt="car" />
+          <img
+            className="slide-photo"
+            src="/assets/img/banner/car-04.jpg"
+            alt="car"
+          />
         </SwiperSlide>
       </Swiper>
+
+      <div class="content-area bg-grey-3 pt-4">
+        <div className="row g-0">
+          <h1 className="display-1 text-light-50">About us</h1>
+        </div>
+      </div>
     </>
   );
 }

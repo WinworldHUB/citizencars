@@ -1,0 +1,75 @@
+/* Custom Styles */
+.nav-link{
+    border: var(--bs-red) 1px solid;
+    border-radius: 27px;
+    padding: 6px 15px !important;
+    margin-right: 10px !important;
+}
+
+.nav-link:hover {
+    background-color: transparent !important;
+}
+
+.logo-photo{
+    height: 70px;
+}
+
+.top-20{
+    top: 20% !important;
+}
+
+.text-red{
+    color: var(--bs-red) !important;
+}
+
+.text-bold{
+    font-weight: 600 !important;
+}
+
+.form-group {
+    padding: 10px 0px !important;
+}
+
+.form-group select{
+    min-height: 55px;
+    border-radius: 0;
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    appearance: menulist;
+}
+
+.search-button {
+    min-height: 55px;
+    height: 100%;
+}
+
+.advantages-4{
+    width: 200px;
+}
+
+.advantages-4-inner {
+    border-radius: 21px;
+    color: var(--bs-dark);
+}
+
+.advantages-4-inner:hover {
+    color: var(--bs-light);
+}
+
+.advantages-4-inner i{
+    font-size: 64px;
+    padding-bottom: 10px;
+}
+
+.advantages-4-inner p{
+    padding-top: 30px;
+    font-weight: 300;
+}
+
+.text-light-50{
+    color:#BABABA80;
+}
+
+.slide-photo{
+    width: 100% !important;
+}
