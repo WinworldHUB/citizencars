@@ -108,3 +108,30 @@
   font-weight: 300;
   line-height: 1.2;
 }
+
+.container-primary{
+    background-color: var(--bs-primary) !important;
+    padding: 30px 120px;
+}
+
+.rounded{
+    border-radius: 20px !important;
+}
+
+.input-group.rounded>input:first-child{
+    border-top-left-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+}
+
+.input-group.rounded>input:last-child, .input-group.rounded>button:last-child{
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+}
+
+.btn-wide {
+    padding: 0 20px;
+}
+
+.content-area-fluid{
+    padding: 80px 100px !important;
+}
