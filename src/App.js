@@ -1,3 +1,10 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Scrollbar, } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
 function App() {
   return (
     <>
@@ -15,26 +22,17 @@ function App() {
               />
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a
-                    className="nav-link text-white"
-                    href="javascript;"
-                  >
+                  <a className="nav-link text-white" href="javascript;">
                     BUY: 99999999
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a
-                    className="nav-link text-white"
-                    href="javascript;"
-                  >
+                  <a className="nav-link text-white" href="javascript;">
                     SELL: 99999999
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a
-                    className="nav-link text-white"
-                    href="javascript;"
-                  >
+                  <a className="nav-link text-white" href="javascript;">
                     About us
                   </a>
                 </li>
@@ -49,10 +47,7 @@ function App() {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a
-                    className="nav-link bg-light b-0"
-                    href="javascript;"
-                  >
+                  <a className="nav-link bg-light b-0" href="javascript;">
                     Login
                   </a>
                 </li>
@@ -215,6 +210,29 @@ function App() {
           </div>
         </div>
       </div>
+
+      <Swiper
+        modules={[Navigation, Scrollbar]}
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation={true}
+      >
+        <SwiperSlide>
+          <img src="/assets/img/banner/img-1.jpg" alt="car" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/assets/img/banner/img-3.jpg" alt="car" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/assets/img/banner/img-4.jpg" alt="car" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/assets/img/banner/img-5.jpg" alt="car" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/assets/img/banner/img-6.jpg" alt="car" />
+        </SwiperSlide>
+      </Swiper>
     </>
   );
 }
