@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Scrollbar, } from "swiper";
+import { Navigation, Scrollbar } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -247,9 +247,45 @@ function App() {
         </SwiperSlide>
       </Swiper>
 
-      <div class="content-area bg-grey-3 pt-4">
+      <div class="content-area bg-grey pt-4">
         <div className="row g-0">
-          <h1 className="display-1 text-light-50">About us</h1>
+          <div className="col-12">
+            <h1 className="display-1 text-light-50 text-thin">About us</h1>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-6">
+            <div class="card card-about shadow-sm text-center">
+              <div class="card-body">
+                <h1 class="display-1">20+</h1>
+                <h5 class="text-thin text-primary">Years Experience</h5>
+              </div>
+            </div>
+            <div className="about-content">
+              <p className="display-7 text-uppercase text-bold">
+                Purchase your car in
+              </p>
+              <p className="display-7 text-uppercase text-bold text-primary">
+                29 minutes
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Dignissim nulla urna
+                iaculis suspendisse hendrerit duis Adipiscing neque erat
+                venenatis velit aliquet fringilla faucibus dolor. Tellus lacus
+                at eget. Adipiscing neque erat venenatis velit aliquet fringilla
+                faucibus dolor. Tellus lacus at eget. Adipiscing neque erat
+                venenatis velit aliquet fringilla faucibus dolor. Tellus lacus
+                at eget.
+              </p>
+            </div>
+          </div>
+          <div className="col-6">
+            <img
+              className="slide-photo"
+              src="/assets/img/car-about-01.png"
+              alt="About us"
+            />
+          </div>
         </div>
       </div>
     </>
