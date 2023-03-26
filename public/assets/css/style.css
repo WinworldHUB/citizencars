@@ -5079,7 +5079,7 @@ input[type=checkbox]:checked + label:before {
 
 /** Advantages 3 start **/
 .advantages-3 {
-    background: rgba(0, 0, 0, 0.04) url(../img/img-5.jpg) top left repeat;
+    background: rgba(255, 255, 255, 0.04) url(../img/car/bg-car.jpg) center center repeat;
     background-size: cover;
     width: 100%;
     padding: 100px 0 70px;

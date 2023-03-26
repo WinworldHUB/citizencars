@@ -135,3 +135,19 @@
 .content-area-fluid{
     padding: 80px 100px !important;
 }
+
+.text-lg {
+  font-size: x-large;
+}
+
+.text-md {
+  font-size: larger;
+}
+
+.text-sm {
+  font-size: x-small;
+}
+
+.text-grey{
+  color: #888 !important;
+}
