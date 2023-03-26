@@ -315,7 +315,7 @@ const Home = () => {
                         <img
                           className="img-fluid w-100"
                           src="assets/img/car/car-4.jpg"
-                          alt="photo"
+                          alt=""
                         />
                       </div>
                     </div>
@@ -339,7 +339,7 @@ const Home = () => {
                         <img
                           className="img-fluid w-100"
                           src="assets/img/car/car-6.jpg"
-                          alt="photo"
+                          alt=""
                         />
                       </div>
                     </div>
@@ -365,7 +365,7 @@ const Home = () => {
                     <img
                       className="img-fluid w-100"
                       src="assets/img/car/car-11.jpg"
-                      alt="photo"
+                      alt=""
                     />
                   </div>
                 </div>
@@ -391,7 +391,7 @@ const Home = () => {
                         <img
                           className="img-fluid w-100"
                           src="assets/img/car/car-1.jpg"
-                          alt="photo"
+                          alt=""
                         />
                       </div>
                     </div>
@@ -415,7 +415,7 @@ const Home = () => {
                         <img
                           className="img-fluid w-100"
                           src="assets/img/car/car-2.jpg"
-                          alt="photo"
+                          alt=""
                         />
                       </div>
                     </div>
@@ -475,19 +475,19 @@ const Home = () => {
                       <div class="date-box-2">27 Feb</div>
                       <div class="post-meta clearfix">
                         <span>
-                          <a href="#">
+                          <a href="javascript;">
                             <i class="flaticon-user-1"></i>
                           </a>
                           Admin
                         </span>
                         <span>
-                          <a href="#">
+                          <a href="javascript;">
                             <i class="flaticon-comment"></i>
                           </a>
                           17K
                         </span>
                         <span>
-                          <a href="#">
+                          <a href="javascript;">
                             <i class="flaticon-calendar"></i>
                           </a>
                           73k
@@ -515,19 +515,19 @@ const Home = () => {
                       <div class="date-box-2">14 Aug</div>
                       <div class="post-meta clearfix">
                         <span>
-                          <a href="#">
+                          <a href="javascript;">
                             <i class="flaticon-user-1"></i>
                           </a>
                           Admin
                         </span>
                         <span>
-                          <a href="#">
+                          <a href="javascript;">
                             <i class="flaticon-comment"></i>
                           </a>
                           17K
                         </span>
                         <span>
-                          <a href="#">
+                          <a href="javascript;">
                             <i class="flaticon-calendar"></i>
                           </a>
                           73k
@@ -555,19 +555,19 @@ const Home = () => {
                       <div class="date-box-2">14 Sep</div>
                       <div class="post-meta clearfix">
                         <span>
-                          <a href="#">
+                          <a href="javascript;">
                             <i class="flaticon-user-1"></i>
                           </a>
                           Admin
                         </span>
                         <span>
-                          <a href="#">
+                          <a href="javascript;">
                             <i class="flaticon-comment"></i>
                           </a>
                           17K
                         </span>
                         <span>
-                          <a href="#">
+                          <a href="javascript;">
                             <i class="flaticon-calendar"></i>
                           </a>
                           73k
@@ -595,19 +595,19 @@ const Home = () => {
                       <div class="date-box-2">14 Nov</div>
                       <div class="post-meta clearfix">
                         <span>
-                          <a href="#">
+                          <a href="javascript;">
                             <i class="flaticon-user-1"></i>
                           </a>
                           Admin
                         </span>
                         <span>
-                          <a href="#">
+                          <a href="javascript;">
                             <i class="flaticon-comment"></i>
                           </a>
                           17K
                         </span>
                         <span>
-                          <a href="#">
+                          <a href="javascript;">
                             <i class="flaticon-calendar"></i>
                           </a>
                           73k
@@ -744,19 +744,19 @@ const Home = () => {
                       />
                       <div class="post-meta clearfix">
                         <span>
-                          <a href="#">
+                          <a href="javascript;">
                             <i class="flaticon-user-1"></i>
                           </a>
                           Admin
                         </span>
                         <span>
-                          <a href="#">
+                          <a href="javascript;">
                             <i class="flaticon-comment"></i>
                           </a>
                           17K
                         </span>
                         <span>
-                          <a href="#">
+                          <a href="javascript;">
                             <i class="flaticon-calendar"></i>
                           </a>
                           73k
@@ -788,19 +788,19 @@ const Home = () => {
                       />
                       <div class="post-meta clearfix">
                         <span>
-                          <a href="#">
+                          <a href="javascript;">
                             <i class="flaticon-user-1"></i>
                           </a>
                           Admin
                         </span>
                         <span>
-                          <a href="#">
+                          <a href="javascript;">
                             <i class="flaticon-comment"></i>
                           </a>
                           17K
                         </span>
                         <span>
-                          <a href="#">
+                          <a href="javascript;">
                             <i class="flaticon-calendar"></i>
                           </a>
                           73k

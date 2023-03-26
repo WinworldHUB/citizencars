@@ -151,3 +151,7 @@
 .text-grey{
   color: #888 !important;
 }
+
+li:hover, li a:hover{
+  color: var(--bs-primary) !important;
+}
