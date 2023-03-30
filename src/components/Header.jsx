@@ -1,13 +1,17 @@
+import { Link } from "react-router-dom";
+
 const Header = () => (
   <header className="main-header header-fixed sticky-header" id="main-header-3">
     <div className="container">
       <div className="header-inner bg-transparent">
         <nav className="d-flex justify-content-between navbar navbar-expand-lg bg-transparent">
-          <img
-            src="/assets/img/logos/logo-3.png"
-            alt="Citizen Cars"
-            className="logo-photo"
-          />
+          <Link to='/'>
+            <img
+              src="/assets/img/logos/logo-3.png"
+              alt="Citizen Cars"
+              className="logo-photo"
+            />
+          </Link>
           <ul className="navbar-nav">
             <li className="nav-item">
               <a className="nav-link text-white" href="javascript;">
@@ -20,9 +24,9 @@ const Header = () => (
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="javascript;">
+              <Link className="nav-link text-white" to={"/about"}>
                 About us
-              </a>
+              </Link>
             </li>
           </ul>
           <ul className="navbar-nav">

@@ -4,14 +4,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import DefaultLayout from "../layouts/DefaultLayout";
+import BGOverlaySection from "../components/BGOverlaySection";
 
 const Home = () => {
   return (
-    <>
-      <Header />
-
+    <DefaultLayout>
       <div className="banner" id="banner4">
         <div
           id="carouselExampleIndicators"
@@ -392,23 +390,23 @@ const Home = () => {
         </div>
       </div>
 
-      <div class="blog comon-slick content-area">
-        <div class="container">
-          <div class="main-title">
+      <div className="blog comon-slick content-area">
+        <div className="container">
+          <div className="main-title">
             <h5 className="text-primary text-uppercase">Popular</h5>
-            <span class="mb-10 text-uppercase display-6">
+            <span className="mb-10 text-uppercase display-6">
               New Luxury Cars in India
             </span>
-            <div class="title-border">
-              <div class="title-border-inner"></div>
-              <div class="title-border-inner"></div>
-              <div class="title-border-inner"></div>
-              <div class="title-border-inner"></div>
-              <div class="title-border-inner"></div>
+            <div className="title-border">
+              <div className="title-border-inner"></div>
+              <div className="title-border-inner"></div>
+              <div className="title-border-inner"></div>
+              <div className="title-border-inner"></div>
+              <div className="title-border-inner"></div>
             </div>
           </div>
           <div
-            class="slick row comon-slick-inner"
+            className="slick row comon-slick-inner"
             data-slick='{"slidesToShow": 3, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'
           >
             <Swiper
@@ -418,37 +416,37 @@ const Home = () => {
               navigation={true}
             >
               <SwiperSlide>
-                <div class="item slide-box">
-                  <div class="blog-4">
-                    <div class="blog-photo">
+                <div className="item slide-box">
+                  <div className="blog-4">
+                    <div className="blog-photo">
                       <img
                         src="assets/img/blog/blog-2.jpg"
                         alt="blog"
-                        class="img-fluid"
+                        className="img-fluid"
                       />
-                      <div class="date-box-2">27 Feb</div>
-                      <div class="post-meta clearfix">
+                      <div className="date-box-2">27 Feb</div>
+                      <div className="post-meta clearfix">
                         <span>
                           <a href="javascript;">
-                            <i class="flaticon-user-1"></i>
+                            <i className="flaticon-user-1"></i>
                           </a>
                           Admin
                         </span>
                         <span>
                           <a href="javascript;">
-                            <i class="flaticon-comment"></i>
+                            <i className="flaticon-comment"></i>
                           </a>
                           17K
                         </span>
                         <span>
                           <a href="javascript;">
-                            <i class="flaticon-calendar"></i>
+                            <i className="flaticon-calendar"></i>
                           </a>
                           73k
                         </span>
                       </div>
                     </div>
-                    <div class="detail">
+                    <div className="detail">
                       <p>2022 BMW X7 XDRIVER30D DPE SIGNATURE</p>
                       <span className="text-sm">
                         REG.YEAR - 2021 | KMS - 25000 | FUEL TYPE - Diesel{" "}
@@ -458,37 +456,37 @@ const Home = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div class="item slide-box">
-                  <div class="blog-4">
-                    <div class="blog-photo">
+                <div className="item slide-box">
+                  <div className="blog-4">
+                    <div className="blog-photo">
                       <img
                         src="assets/img/blog/blog-1.jpg"
                         alt="blog"
-                        class="img-fluid"
+                        className="img-fluid"
                       />
-                      <div class="date-box-2">14 Aug</div>
-                      <div class="post-meta clearfix">
+                      <div className="date-box-2">14 Aug</div>
+                      <div className="post-meta clearfix">
                         <span>
                           <a href="javascript;">
-                            <i class="flaticon-user-1"></i>
+                            <i className="flaticon-user-1"></i>
                           </a>
                           Admin
                         </span>
                         <span>
                           <a href="javascript;">
-                            <i class="flaticon-comment"></i>
+                            <i className="flaticon-comment"></i>
                           </a>
                           17K
                         </span>
                         <span>
                           <a href="javascript;">
-                            <i class="flaticon-calendar"></i>
+                            <i className="flaticon-calendar"></i>
                           </a>
                           73k
                         </span>
                       </div>
                     </div>
-                    <div class="detail">
+                    <div className="detail">
                       <p>Audi Q8 XDRIVER30D DPE SIGNATURE</p>
                       <span className="text-sm">
                         REG.YEAR - 2021 | KMS - 25000 | FUEL TYPE - Diesel{" "}
@@ -498,37 +496,37 @@ const Home = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div class="item slide-box">
-                  <div class="blog-4">
-                    <div class="blog-photo">
+                <div className="item slide-box">
+                  <div className="blog-4">
+                    <div className="blog-photo">
                       <img
                         src="assets/img/blog/blog-2.jpg"
                         alt="blog"
-                        class="img-fluid"
+                        className="img-fluid"
                       />
-                      <div class="date-box-2">14 Sep</div>
-                      <div class="post-meta clearfix">
+                      <div className="date-box-2">14 Sep</div>
+                      <div className="post-meta clearfix">
                         <span>
                           <a href="javascript;">
-                            <i class="flaticon-user-1"></i>
+                            <i className="flaticon-user-1"></i>
                           </a>
                           Admin
                         </span>
                         <span>
                           <a href="javascript;">
-                            <i class="flaticon-comment"></i>
+                            <i className="flaticon-comment"></i>
                           </a>
                           17K
                         </span>
                         <span>
                           <a href="javascript;">
-                            <i class="flaticon-calendar"></i>
+                            <i className="flaticon-calendar"></i>
                           </a>
                           73k
                         </span>
                       </div>
                     </div>
-                    <div class="detail">
+                    <div className="detail">
                       <p>JAGUAR XDRIVER30D DPE SIGNATURE 1</p>
                       <span className="text-sm">
                         REG.YEAR - 2021 | KMS - 25000 | FUEL TYPE - Diesel{" "}
@@ -538,37 +536,37 @@ const Home = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div class="item slide-box">
-                  <div class="blog-4">
-                    <div class="blog-photo">
+                <div className="item slide-box">
+                  <div className="blog-4">
+                    <div className="blog-photo">
                       <img
                         src="assets/img/blog/blog-3.jpg"
                         alt="blog"
-                        class="img-fluid"
+                        className="img-fluid"
                       />
-                      <div class="date-box-2">14 Nov</div>
-                      <div class="post-meta clearfix">
+                      <div className="date-box-2">14 Nov</div>
+                      <div className="post-meta clearfix">
                         <span>
                           <a href="javascript;">
-                            <i class="flaticon-user-1"></i>
+                            <i className="flaticon-user-1"></i>
                           </a>
                           Admin
                         </span>
                         <span>
                           <a href="javascript;">
-                            <i class="flaticon-comment"></i>
+                            <i className="flaticon-comment"></i>
                           </a>
                           17K
                         </span>
                         <span>
                           <a href="javascript;">
-                            <i class="flaticon-calendar"></i>
+                            <i className="flaticon-calendar"></i>
                           </a>
                           73k
                         </span>
                       </div>
                     </div>
-                    <div class="detail">
+                    <div className="detail">
                       <p>JAGUAR XDRIVER30D DPE SIGNATURE 1</p>
                       <span className="text-sm">
                         REG.YEAR - 2021 | KMS - 25000 | FUEL TYPE - Diesel{" "}
@@ -582,11 +580,11 @@ const Home = () => {
         </div>
       </div>
 
-      <div class="advantages-3">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-5 align-self-center">
-              <div class="main-title">
+      <BGOverlaySection>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-5 align-self-center">
+              <div className="main-title">
                 <h5 className="text-uppercase text-grey">How it works</h5>
                 <h2 className="pb-4">Our Advantages</h2>
                 <p>
@@ -602,26 +600,26 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div class="col-lg-7">
-              <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 pb-md-4">
-                  <div class="advantages-box h-100">
-                    <div class="icon">
-                      <i class="flaticon-shield"></i>
+            <div className="col-lg-7">
+              <div className="row">
+                <div className="col-lg-6 col-md-6 col-sm-12 pb-md-4">
+                  <div className="advantages-box h-100">
+                    <div className="icon">
+                      <i className="flaticon-shield"></i>
                     </div>
-                    <div class="detail">
+                    <div className="detail">
                       <h5>
                         <a href="services.html">Expert Review On Luxury Cars</a>
                       </h5>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 pb-md-4">
-                  <div class="advantages-box h-100">
-                    <div class="icon">
-                      <i class="flaticon-deal"></i>
+                <div className="col-lg-6 col-md-6 col-sm-12 pb-md-4">
+                  <div className="advantages-box h-100">
+                    <div className="icon">
+                      <i className="flaticon-deal"></i>
                     </div>
-                    <div class="detail">
+                    <div className="detail">
                       <h5>
                         <a href="services.html">Compare Your Favorite Cars</a>
                         <p>&nbsp;</p>
@@ -629,12 +627,12 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                  <div class="advantages-box h-100">
-                    <div class="icon">
-                      <i class="flaticon-money"></i>
+                <div className="col-lg-6 col-md-6 col-sm-12">
+                  <div className="advantages-box h-100">
+                    <div className="icon">
+                      <i className="flaticon-money"></i>
                     </div>
-                    <div class="detail">
+                    <div className="detail">
                       <h5>
                         <a href="services.html">
                           More Than 317 Luxury Cars &It's In Depth
@@ -644,12 +642,12 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                  <div class="advantages-box h-100">
-                    <div class="icon">
-                      <i class="flaticon-support-2"></i>
+                <div className="col-lg-6 col-md-6 col-sm-12">
+                  <div className="advantages-box h-100">
+                    <div className="icon">
+                      <i className="flaticon-support-2"></i>
                     </div>
-                    <div class="detail">
+                    <div className="detail">
                       <h5>
                         <a href="services.html">Expert Review On Luxury Cars</a>
                       </h5>
@@ -660,25 +658,25 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </BGOverlaySection>
 
-      <div class="blog comon-slick content-area">
-        <div class="container text-center">
-          <div class="main-title">
+      <div className="blog comon-slick content-area">
+        <div className="container text-center">
+          <div className="main-title">
             <h5 className="text-primary text-uppercase">New & Updates</h5>
-            <span class="mb-10 text-uppercase display-6">
+            <span className="mb-10 text-uppercase display-6">
               From the name here
             </span>
-            <div class="title-border">
-              <div class="title-border-inner"></div>
-              <div class="title-border-inner"></div>
-              <div class="title-border-inner"></div>
-              <div class="title-border-inner"></div>
-              <div class="title-border-inner"></div>
+            <div className="title-border">
+              <div className="title-border-inner"></div>
+              <div className="title-border-inner"></div>
+              <div className="title-border-inner"></div>
+              <div className="title-border-inner"></div>
+              <div className="title-border-inner"></div>
             </div>
           </div>
           <div
-            class="slick row comon-slick-inner"
+            className="slick row comon-slick-inner"
             data-slick='{"slidesToShow": 3, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'
           >
             <Swiper
@@ -688,36 +686,36 @@ const Home = () => {
               navigation={true}
             >
               <SwiperSlide>
-                <div class="item slide-box">
-                  <div class="blog-4">
-                    <div class="blog-photo">
+                <div className="item slide-box">
+                  <div className="blog-4">
+                    <div className="blog-photo">
                       <img
                         src="assets/img/wish/bmw.jpg"
                         alt="blog"
-                        class="img-fluid"
+                        className="img-fluid"
                       />
-                      <div class="post-meta clearfix">
+                      <div className="post-meta clearfix">
                         <span>
                           <a href="javascript;">
-                            <i class="flaticon-user-1"></i>
+                            <i className="flaticon-user-1"></i>
                           </a>
                           Admin
                         </span>
                         <span>
                           <a href="javascript;">
-                            <i class="flaticon-comment"></i>
+                            <i className="flaticon-comment"></i>
                           </a>
                           17K
                         </span>
                         <span>
                           <a href="javascript;">
-                            <i class="flaticon-calendar"></i>
+                            <i className="flaticon-calendar"></i>
                           </a>
                           73k
                         </span>
                       </div>
                     </div>
-                    <div class="detail">
+                    <div className="detail">
                       <p>2022 BMW X7 XDRIVER30D DPE SIGNATURE</p>
                       <span className="text-sm">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing
@@ -732,36 +730,36 @@ const Home = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div class="item slide-box">
-                  <div class="blog-4">
-                    <div class="blog-photo">
+                <div className="item slide-box">
+                  <div className="blog-4">
+                    <div className="blog-photo">
                       <img
                         src="assets/img/wish/5530214.jpg"
                         alt="blog"
-                        class="img-fluid"
+                        className="img-fluid"
                       />
-                      <div class="post-meta clearfix">
+                      <div className="post-meta clearfix">
                         <span>
                           <a href="javascript;">
-                            <i class="flaticon-user-1"></i>
+                            <i className="flaticon-user-1"></i>
                           </a>
                           Admin
                         </span>
                         <span>
                           <a href="javascript;">
-                            <i class="flaticon-comment"></i>
+                            <i className="flaticon-comment"></i>
                           </a>
                           17K
                         </span>
                         <span>
                           <a href="javascript;">
-                            <i class="flaticon-calendar"></i>
+                            <i className="flaticon-calendar"></i>
                           </a>
                           73k
                         </span>
                       </div>
                     </div>
-                    <div class="detail">
+                    <div className="detail">
                       <p>Audi Q8 XDRIVER30D DPE SIGNATURE</p>
                       <span className="text-sm">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing
@@ -774,12 +772,12 @@ const Home = () => {
               </SwiperSlide>
             </Swiper>
           </div>
-          <button className="btn btn-primary rounded ps-5 pe-5 text-md">Join Us</button>
+          <button className="btn btn-primary rounded ps-5 pe-5 text-md">
+            Join Us
+          </button>
         </div>
       </div>
-
-      <Footer />
-    </>
+    </DefaultLayout>
   );
 };
 
