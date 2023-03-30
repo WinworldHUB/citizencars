@@ -585,7 +585,7 @@ const Home = () => {
           <div className="row">
             <div className="col-lg-5 align-self-center">
               <div className="main-title">
-                <h5 className="text-uppercase text-grey">How it works</h5>
+                <h5 className="text-uppercase text-light-80">How it works</h5>
                 <h2 className="pb-4">Our Advantages</h2>
                 <p>
                   Buying used luxury cars in India was never this easy. You can
