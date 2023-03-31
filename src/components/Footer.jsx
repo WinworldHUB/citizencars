@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <>
-      <div className="container-fluid container-primary">
+      <div className="container-fluid container-primary wish-footer">
         <div className="row d-flex justify-content-between align-items-center">
           <div className="col-md-3">
             <div className="d-flex justify-content-between">
