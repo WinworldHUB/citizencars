@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { Range, getTrackBackground } from "react-range";
 import { getCurrency, ONE_CR, ONE_LAC } from "../utils";
 
-const SideSearch = React.forwardRef(({ direction = "left", ref }) => {
-    const [values, setValues] = useState([20*ONE_LAC, 40*ONE_LAC]);
-    const STEP = ONE_LAC;
-    const MIN = 10 * ONE_LAC;
-    const MAX = ONE_CR;
+const SideSearch = React.forwardRef((props, ref) => {
+  const { direction = "left" } = props;
+  const [values, setValues] = useState([20 * ONE_LAC, 40 * ONE_LAC]);
+  const STEP = ONE_LAC;
+  const MIN = 10 * ONE_LAC;
+  const MAX = ONE_CR;
 
   return (
     <div className={`sidebar-${direction}`} ref={ref}>
@@ -156,23 +157,23 @@ const SideSearch = React.forwardRef(({ direction = "left", ref }) => {
                   <h3 className="sidebar-title">Brands</h3>
                   <div className="checkbox checkbox-theme checkbox-circle">
                     <input id="checkbox2" type="checkbox" />
-                    <label for="checkbox2">Audi</label>
+                    <label htmlFor="checkbox2">Audi</label>
                   </div>
                   <div className="checkbox checkbox-theme checkbox-circle">
                     <input id="checkbox3" type="checkbox" />
-                    <label for="checkbox3">BMW</label>
+                    <label htmlFor="checkbox3">BMW</label>
                   </div>
                   <div className="checkbox checkbox-theme checkbox-circle">
                     <input id="checkbox4" type="checkbox" />
-                    <label for="checkbox4">Honda</label>
+                    <label htmlFor="checkbox4">Honda</label>
                   </div>
                   <div className="checkbox checkbox-theme checkbox-circle">
                     <input id="checkbox1" type="checkbox" />
-                    <label for="checkbox1">Lamborghini</label>
+                    <label htmlFor="checkbox1">Lamborghini</label>
                   </div>
                   <div className="checkbox checkbox-theme checkbox-circle">
                     <input id="checkbox5" type="checkbox" />
-                    <label for="checkbox5">Toyota</label>
+                    <label htmlFor="checkbox5">Toyota</label>
                   </div>
                 </div>
               </div>

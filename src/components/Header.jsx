@@ -1,11 +1,16 @@
+import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 
-const Header = () => (
-  <header className="main-header header-fixed sticky-header" id="main-header-3">
+const Header = forwardRef((props, ref) => (
+  <header
+    className="main-header header-fixed sticky-header"
+    id="main-header-3"
+    ref={ref}
+  >
     <div className="container">
       <div className="header-inner bg-transparent">
         <nav className="d-flex justify-content-between navbar navbar-expand-lg bg-transparent">
-          <Link to='/'>
+          <Link to="/">
             <img
               src="/assets/img/logos/logo-3.png"
               alt="Citizen Cars"
@@ -31,7 +36,7 @@ const Header = () => (
           </ul>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link text-white bg-primary" to='/cars'>
+              <Link className="nav-link text-white bg-primary" to="/cars">
                 Our Collection
               </Link>
             </li>
@@ -45,6 +50,7 @@ const Header = () => (
       </div>
     </div>
   </header>
-);
+));
 
+Header.displayName = "Header";
 export default Header;

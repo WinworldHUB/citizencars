@@ -9,26 +9,26 @@ const Footer = () => {
                 Follow us:{" "}
               </span>
               <button className="btn btn-outline-light rounded">
-                <i class="fa-solid fa-envelope"></i>
+                <i className="fa-solid fa-envelope"></i>
               </button>
               <button className="btn btn-outline-light rounded">
-                <i class="fa-brands fa-facebook"></i>
+                <i className="fa-brands fa-facebook"></i>
               </button>
               <button className="btn btn-outline-light rounded">
-                <i class="fa-brands fa-instagram"></i>
+                <i className="fa-brands fa-instagram"></i>
               </button>
             </div>
           </div>
           <div className="col-md-5">&nbsp;</div>
           <div className="col-md-4 text-end">
-            <div class="input-group rounded">
+            <div className="input-group rounded">
               <input
                 type="text"
-                class="form-control bg-grey"
+                className="form-control bg-grey"
                 placeholder="Enter your email address"
               />
               <button
-                class="btn btn-secondary btn-wide"
+                className="btn btn-secondary btn-wide"
                 type="button"
                 id="button-addon2"
               >
@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div class="content-area-fluid container-fluid">
+      <div className="content-area-fluid container-fluid">
         <div className="row">
           <div className="col-2">
             <h5 className="text-bold">Luxury cars</h5>
@@ -271,7 +271,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div class="content-area-fluid container-fluid bg-grey-3">
+      <div className="content-area-fluid container-fluid bg-grey-3">
         <div className="row">
           <div className="col-3">
             <h6 className="text-bold">Headquarters</h6>
@@ -301,7 +301,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div class="container-fluid bg-grey text-center p-3">
+      <div className="container-fluid bg-grey text-center p-3">
         Copyright © 2023 Big XYZ
       </div>
     </>

@@ -87,11 +87,9 @@ const About = () => {
       <div className="our-team content-area">
         <div className="container">
           <div className="row">
-            {teamMembers.map((member) => (
-              <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                <TeamMember
-                  {...member}
-                />
+            {teamMembers.map((member, index) => (
+              <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12" key={index}>
+                <TeamMember {...member} />
               </div>
             ))}
           </div>

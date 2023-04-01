@@ -266,7 +266,7 @@ const Home = () => {
                       <div className="car-thumbnail-photo">
                         <img
                           className="img-fluid w-100"
-                          src="assets/img/car/car-4.jpg"
+                          src="assets/img/cars/car-4.jpg"
                           alt=""
                         />
                       </div>
@@ -290,7 +290,7 @@ const Home = () => {
                       <div className="car-thumbnail-photo">
                         <img
                           className="img-fluid w-100"
-                          src="assets/img/car/car-6.jpg"
+                          src="assets/img/cars/car-6.jpg"
                           alt=""
                         />
                       </div>
@@ -316,7 +316,7 @@ const Home = () => {
                   <div className="car-thumbnail-photo">
                     <img
                       className="img-fluid w-100"
-                      src="assets/img/car/car-11.jpg"
+                      src="assets/img/cars/car-11.jpg"
                       alt=""
                     />
                   </div>
@@ -342,7 +342,7 @@ const Home = () => {
                       <div className="car-thumbnail-photo">
                         <img
                           className="img-fluid w-100"
-                          src="assets/img/car/car-1.jpg"
+                          src="assets/img/cars/car-1.jpg"
                           alt=""
                         />
                       </div>
@@ -366,7 +366,7 @@ const Home = () => {
                       <div className="car-thumbnail-photo">
                         <img
                           className="img-fluid w-100"
-                          src="assets/img/car/car-2.jpg"
+                          src="assets/img/cars/car-2.jpg"
                           alt=""
                         />
                       </div>

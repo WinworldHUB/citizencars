@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const TeamMember = React.forwardRef(({ pic, name, role, ref }) => {
+const TeamMember = React.forwardRef((props, ref) => {
+  const { pic, name, role } = props;
   return (
     <div className="team-3" ref={ref}>
       <div className="thumb">

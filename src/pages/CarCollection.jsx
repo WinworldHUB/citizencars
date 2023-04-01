@@ -63,13 +63,13 @@ const CarCollection = () => {
   return (
     <>
       <DefaultLayout isTopMarginRequired={true}>
-        <div class="featured-car content-area">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-4 col-md-12">
+        <div className="featured-car content-area">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-4 col-md-12">
                 <SideSearch />
               </div>
-              <div class="col-lg-8 col-md-12">
+              <div className="col-lg-8 col-md-12">
                 <ListView cars={cars} />
               </div>
             </div>

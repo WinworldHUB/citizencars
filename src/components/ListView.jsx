@@ -1,14 +1,15 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import GridTile from "./GridTile";
 import ListTile from "./ListTile";
 
-const ListView = ({ cars }) => {
+const ListView = React.forwardRef((props, ref) => {
+  const { cars } = props;
   const [isList, setIsList] = useState(true);
 
   return (
     <>
-      <div className="option-bar clearfix">
+      <div className="option-bar clearfix" ref={ref}>
         <div className="sorting-options2">
           <span className="sort">Sort by:</span>
           <select className="selectpicker search-fields" name="default-order">
@@ -40,14 +41,14 @@ const ListView = ({ cars }) => {
       </div>
       {isList === false ? (
         <div className="row">
-          {cars.map((car) => (
-            <GridTile {...car} />
+          {cars.map((car, index) => (
+            <GridTile {...car} key={index} />
           ))}
         </div>
       ) : (
         <>
-          {cars.map((car) => (
-            <ListTile {...car} />
+          {cars.map((car, index) => (
+            <ListTile {...car} key={index} />
           ))}
         </>
       )}
@@ -84,6 +85,8 @@ const ListView = ({ cars }) => {
       </div> */}
     </>
   );
-};
+});
+
+ListView.displayName = "ListView";
 
 export default ListView;

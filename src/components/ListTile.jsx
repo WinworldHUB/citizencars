@@ -1,53 +1,42 @@
 import React from "react";
 
-const ListTile = React.forwardRef(
-  ({
-    pic,
-    isFeatured,
-    name,
-    price,
-    buildYear,
-    totalRun,
-    transmission,
-    ref,
-  }) => {
-    return (
-      <div class="car-box-2">
-        <div class="row g-0">
-          <div class="col-lg-5 col-md-5">
-            <div class="car-thumbnail">
-              <a href="car-details.html" class="car-img">
-                {isFeatured && <div class="tag">Featured</div>}
-                <div class="price-box-2">
-                  { price}
-                </div>
-                <img class="d-block w-100" src={ pic} alt="car" />
-              </a>
-            </div>
+const ListTile = React.forwardRef((props, ref) => {
+  const { pic, isFeatured, name, price, buildYear, totalRun, transmission } =
+    props;
+  return (
+    <div className="car-box-2">
+      <div className="row g-0">
+        <div className="col-lg-5 col-md-5">
+          <div className="car-thumbnail">
+            <a href="car-details.html" className="car-img">
+              {isFeatured && <div className="tag">Featured</div>}
+              <div className="price-box-2">{price}</div>
+              <img className="d-block w-100" src={pic} alt="car" />
+            </a>
           </div>
-          <div class="col-lg-7 col-md-7 align-self-center">
-            <div class="detail">
-              <h3 class="title">
-                <a href="car-details.html">{ name}</a>
-              </h3>
-              <ul class="facilities-list clearfix">
-                <li>
-                  <i class="flaticon-way"></i> { totalRun}
-                </li>
-                <li>
-                  <i class="flaticon-manual-transmission"></i> { transmission}
-                </li>
-                <li>
-                  <i class="flaticon-calendar-1"></i> {buildYear}
-                </li>
-              </ul>
-            </div>
+        </div>
+        <div className="col-lg-7 col-md-7 align-self-center">
+          <div className="detail">
+            <h3 className="title">
+              <a href="car-details.html">{name}</a>
+            </h3>
+            <ul className="facilities-list clearfix">
+              <li>
+                <i className="flaticon-way"></i> {totalRun}
+              </li>
+              <li>
+                <i className="flaticon-manual-transmission"></i> {transmission}
+              </li>
+              <li>
+                <i className="flaticon-calendar-1"></i> {buildYear}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    );
-  }
-);
+    </div>
+  );
+});
 
 ListTile.displayName = "ListTile";
 export default ListTile;
