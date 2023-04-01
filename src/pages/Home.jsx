@@ -20,7 +20,7 @@ const Home = () => {
             <div className="carousel-item banner-max-height active item-bg">
               <img
                 className="d-block w-100 h-100"
-                src="/assets/img/car/car-homepage-hero.png"
+                src="/assets/img/cars/car-homepage-hero.png"
                 alt="banner"
               />
               <div className="carousel-content container text-center banner-info-2 bi-2 text-white d-flex flex-column justify-content-between h-100">

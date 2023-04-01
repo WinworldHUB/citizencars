@@ -31,9 +31,9 @@ const Header = () => (
           </ul>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link text-white bg-primary" href="javascript;">
+              <Link className="nav-link text-white bg-primary" to='/cars'>
                 Our Collection
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link bg-light b-0" href="javascript;">
