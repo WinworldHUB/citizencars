@@ -1,5 +1,29 @@
 import BGImageSection from "../components/BGImageSection";
+import TeamMember from "../components/TeamMember";
 import DefaultLayout from "../layouts/DefaultLayout";
+
+const teamMembers = [
+  {
+    pic: "assets/img/avatar/avatar-9.jpg",
+    name: "Rithik Roshan",
+    role: "CEO/FOUNDER",
+  },
+  {
+    pic: "assets/img/avatar/avatar-10.jpg",
+    name: "Depkika Modi",
+    role: "FOUNDER",
+  },
+  {
+    pic: "assets/img/avatar/avatar-12.jpg",
+    name: "Anupama Chopra",
+    role: "Content Writer",
+  },
+  {
+    pic: "assets/img/avatar/avatar-11.jpg",
+    name: "Amitab Babu",
+    role: "Sr. Graphic Designer",
+  },
+];
 
 const About = () => {
   return (
@@ -59,6 +83,20 @@ const About = () => {
           </div>
         </div>
       </BGImageSection>
+
+      <div className="our-team content-area">
+        <div className="container">
+          <div className="row">
+            {teamMembers.map((member) => (
+              <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                <TeamMember
+                  {...member}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </DefaultLayout>
   );
 };
