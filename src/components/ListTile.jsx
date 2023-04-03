@@ -1,24 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ListTile = React.forwardRef((props, ref) => {
-  const { pic, isFeatured, name, price, buildYear, totalRun, transmission } =
+  const { pic, isFeatured, name, price, buildYear, totalRun, transmission, onClick } =
     props;
   return (
     <div className="car-box-2">
       <div className="row g-0">
         <div className="col-lg-5 col-md-5">
           <div className="car-thumbnail">
-            <a href="car-details.html" className="car-img">
+            <Link className="car-img" onClick={onClick}>
               {isFeatured && <div className="tag">Featured</div>}
               <div className="price-box-2">{price}</div>
-              <img className="d-block w-100" src={pic} alt="car" />
-            </a>
+              <img className="d-block w-100" src={pic[0]} alt="car" />
+            </Link>
           </div>
         </div>
         <div className="col-lg-7 col-md-7 align-self-center">
           <div className="detail">
             <h3 className="title">
-              <a href="car-details.html">{name}</a>
+              <Link onClick={onClick}>{name}</Link>
             </h3>
             <ul className="facilities-list clearfix">
               <li>

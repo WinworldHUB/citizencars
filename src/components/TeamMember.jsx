@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const TeamMember = React.forwardRef((props, ref) => {
-  const { pic, name, role } = props;
+  const { pic, name, role, sameHeight = false } = props;
   return (
-    <div className="team-3" ref={ref}>
+    <div className={`team-3 ${sameHeight === true && 'h-100'}`} ref={ref}>
       <div className="thumb">
         <img src={pic} alt="agent" className="img-fluid w-100" />
       </div>

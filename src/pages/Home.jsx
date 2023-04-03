@@ -1,15 +1,16 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Scrollbar } from "swiper";
+import { Navigation, Scrollbar, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import DefaultLayout from "../layouts/DefaultLayout";
 import BGOverlaySection from "../components/BGOverlaySection";
+import data from "../Data.json";
 
 const Home = () => {
   return (
-    <DefaultLayout>
+    <DefaultLayout isTopMarginRequired={false}>
       <div className="banner" id="banner4">
         <div
           id="carouselExampleIndicators"
@@ -165,39 +166,19 @@ const Home = () => {
       </div>
 
       <Swiper
-        modules={[Navigation, Scrollbar]}
+        modules={[Navigation, Scrollbar, Pagination]}
         spaceBetween={0}
         slidesPerView={1}
         navigation={true}
+        pagination={{
+          dynamicBullets: true,
+        }}
       >
-        <SwiperSlide>
-          <img
-            className="slide-photo"
-            src="/assets/img/banner/car-01.jpg"
-            alt="car"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            className="slide-photo"
-            src="/assets/img/banner/car-02.jpg"
-            alt="car"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            className="slide-photo"
-            src="/assets/img/banner/car-03.jpg"
-            alt="car"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            className="slide-photo"
-            src="/assets/img/banner/car-04.jpg"
-            alt="car"
-          />
-        </SwiperSlide>
+        {data.banner.map((bannerPic) => (
+          <SwiperSlide>
+            <img className="slide-photo" src={bannerPic} alt="car" />
+          </SwiperSlide>
+        ))}
       </Swiper>
 
       <div className="content-area bg-grey pt-4">

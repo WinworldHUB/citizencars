@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
-const DefaultLayout = ({ isTopMarginRequired = false, children }) => {
+const DefaultLayout = ({ isTopMarginRequired = true, children }) => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

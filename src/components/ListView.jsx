@@ -4,7 +4,7 @@ import GridTile from "./GridTile";
 import ListTile from "./ListTile";
 
 const ListView = React.forwardRef((props, ref) => {
-  const { cars } = props;
+  const { cars, onClick } = props;
   const [isList, setIsList] = useState(true);
 
   return (
@@ -42,13 +42,13 @@ const ListView = React.forwardRef((props, ref) => {
       {isList === false ? (
         <div className="row">
           {cars.map((car, index) => (
-            <GridTile {...car} key={index} />
+            <GridTile {...car} key={index} onClick={(e) => onClick(e, index)} />
           ))}
         </div>
       ) : (
         <>
           {cars.map((car, index) => (
-            <ListTile {...car} key={index} />
+            <ListTile {...car} key={index} onClick={(e) => onClick(e, index)} />
           ))}
         </>
       )}

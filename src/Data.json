@@ -1,0 +1,175 @@
+{
+  "banner": [
+    "/assets/img/banner/car-01.jpg",
+    "/assets/img/banner/car-02.jpg",
+    "/assets/img/banner/car-03.jpg",
+    "/assets/img/banner/car-04.jpg"
+  ],
+  "cars": [
+    {
+      "pic": [
+        "/assets/img/cars/car-1.jpg",
+        "/assets/img/cars/car-1.jpg",
+        "/assets/img/cars/car-1.jpg",
+        "/assets/img/cars/car-1.jpg"
+      ],
+      "name": "Hyundai Santa",
+      "isFeatured": true,
+      "price": "8.5 Lakhs",
+      "buildYear": "2022",
+      "totalRun": "4,000 km",
+      "transmission": "Manual",
+      "rating": 4.5,
+      "emi": "1,29,259",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In ferme facilisis massa, a consequat purus viverra a. Aliquam pellentesque nibh et nibh feugiat gravida. Maecenas ultricies, diam vitae semper placerat, velit risus accumsan nisl, eget tempor lacus est vel nunc. Proin accumsan elit sed neque euismod fringilla. Curabitur lobortis nunc velit, et fermentum urna dapibus non. Vivamus magna lorem, elementum id gravida ac, laoreet tristique augue. Maecenas dictum lacus eu nunc porttitor, ut hendrerit arcu efficitur."
+    },
+    {
+      "pic": [
+        "/assets/img/cars/car-2.jpg",
+        "/assets/img/cars/car-2.jpg",
+        "/assets/img/cars/car-2.jpg",
+        "/assets/img/cars/car-2.jpg"
+      ],
+      "name": "Hyundai Santa",
+      "isFeatured": false,
+      "price": "8.5 Lakhs",
+      "buildYear": "2022",
+      "totalRun": "4,000 km",
+      "transmission": "Manual",
+      "rating": 4.5,
+      "emi": "1,29,259",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In ferme facilisis massa, a consequat purus viverra a. Aliquam pellentesque nibh et nibh feugiat gravida. Maecenas ultricies, diam vitae semper placerat, velit risus accumsan nisl, eget tempor lacus est vel nunc. Proin accumsan elit sed neque euismod fringilla. Curabitur lobortis nunc velit, et fermentum urna dapibus non. Vivamus magna lorem, elementum id gravida ac, laoreet tristique augue. Maecenas dictum lacus eu nunc porttitor, ut hendrerit arcu efficitur."
+    },
+    {
+      "pic": [
+        "/assets/img/cars/car-3.jpg",
+        "/assets/img/cars/car-3.jpg",
+        "/assets/img/cars/car-3.jpg",
+        "/assets/img/cars/car-3.jpg"
+      ],
+      "name": "Hyundai Santa",
+      "isFeatured": false,
+      "price": "8.5 Lakhs",
+      "buildYear": "2022",
+      "totalRun": "4,000 km",
+      "transmission": "Manual",
+      "rating": 4.5,
+      "emi": "1,29,259",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In ferme facilisis massa, a consequat purus viverra a. Aliquam pellentesque nibh et nibh feugiat gravida. Maecenas ultricies, diam vitae semper placerat, velit risus accumsan nisl, eget tempor lacus est vel nunc. Proin accumsan elit sed neque euismod fringilla. Curabitur lobortis nunc velit, et fermentum urna dapibus non. Vivamus magna lorem, elementum id gravida ac, laoreet tristique augue. Maecenas dictum lacus eu nunc porttitor, ut hendrerit arcu efficitur."
+    },
+    {
+      "pic": [
+        "/assets/img/cars/car-4.jpg",
+        "/assets/img/cars/car-4.jpg",
+        "/assets/img/cars/car-4.jpg",
+        "/assets/img/cars/car-4.jpg"
+      ],
+      "name": "Hyundai Santa",
+      "isFeatured": false,
+      "price": "8.5 Lakhs",
+      "buildYear": "2022",
+      "totalRun": "4,000 km",
+      "transmission": "Manual",
+      "rating": 4.5,
+      "emi": "1,29,259",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In ferme facilisis massa, a consequat purus viverra a. Aliquam pellentesque nibh et nibh feugiat gravida. Maecenas ultricies, diam vitae semper placerat, velit risus accumsan nisl, eget tempor lacus est vel nunc. Proin accumsan elit sed neque euismod fringilla. Curabitur lobortis nunc velit, et fermentum urna dapibus non. Vivamus magna lorem, elementum id gravida ac, laoreet tristique augue. Maecenas dictum lacus eu nunc porttitor, ut hendrerit arcu efficitur."
+    },
+    {
+      "pic": [
+        "/assets/img/cars/car-5.jpg",
+        "/assets/img/cars/car-5.jpg",
+        "/assets/img/cars/car-5.jpg",
+        "/assets/img/cars/car-5.jpg"
+      ],
+      "name": "Hyundai Santa",
+      "isFeatured": false,
+      "price": "8.5 Lakhs",
+      "buildYear": "2022",
+      "totalRun": "4,000 km",
+      "transmission": "Manual",
+      "rating": 4.5,
+      "emi": "1,29,259",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In ferme facilisis massa, a consequat purus viverra a. Aliquam pellentesque nibh et nibh feugiat gravida. Maecenas ultricies, diam vitae semper placerat, velit risus accumsan nisl, eget tempor lacus est vel nunc. Proin accumsan elit sed neque euismod fringilla. Curabitur lobortis nunc velit, et fermentum urna dapibus non. Vivamus magna lorem, elementum id gravida ac, laoreet tristique augue. Maecenas dictum lacus eu nunc porttitor, ut hendrerit arcu efficitur."
+    },
+    {
+      "pic": [
+        "/assets/img/cars/car-6.jpg",
+        "/assets/img/cars/car-6.jpg",
+        "/assets/img/cars/car-6.jpg",
+        "/assets/img/cars/car-6.jpg"
+      ],
+      "name": "Hyundai Santa",
+      "isFeatured": false,
+      "price": "8.5 Lakhs",
+      "buildYear": "2022",
+      "totalRun": "4,000 km",
+      "transmission": "Manual",
+      "rating": 4.5,
+      "emi": "1,29,259",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In ferme facilisis massa, a consequat purus viverra a. Aliquam pellentesque nibh et nibh feugiat gravida. Maecenas ultricies, diam vitae semper placerat, velit risus accumsan nisl, eget tempor lacus est vel nunc. Proin accumsan elit sed neque euismod fringilla. Curabitur lobortis nunc velit, et fermentum urna dapibus non. Vivamus magna lorem, elementum id gravida ac, laoreet tristique augue. Maecenas dictum lacus eu nunc porttitor, ut hendrerit arcu efficitur."
+    }
+  ],
+
+  "carSpecs": [
+    {
+      "title": "Top Speed",
+      "imgPath": "https://img.icons8.com/ios/100/null/speed--v1.png"
+    },
+    {
+      "title": "Fuel Type",
+      "imgPath": "https://img.icons8.com/external-outline-lafs/100/null/external-fuel-car-dashboard-outline-part-3-outline-lafs-4.png"
+    },
+    {
+      "title": "Mileage",
+      "imgPath": "https://img.icons8.com/ios/100/null/odometer.png"
+    },
+    {
+      "title": "Engine",
+      "imgPath": "https://img.icons8.com/dotty/100/null/engine.png"
+    },
+    {
+      "title": "Gear",
+      "imgPath": "https://img.icons8.com/ios/100/null/services--v1.png"
+    },
+    {
+      "title": "Drive Train",
+      "imgPath": "https://img.icons8.com/external-others-zufarizal-robiyanto/100/null/external-car-garis-car-service-others-zufarizal-robiyanto-7.png"
+    },
+    {
+      "title": "Body Style",
+      "imgPath": "https://img.icons8.com/wired/100/null/car.png"
+    },
+    {
+      "title": "Year",
+      "imgPath": "https://img.icons8.com/ios/100/null/calendar--v1.png"
+    },
+    {
+      "title": "Fuel Type",
+      "imgPath": "https://img.icons8.com/dotty/100/null/gas-pump.png"
+    },
+    {
+      "title": "Interior Color",
+      "imgPath": "https://img.icons8.com/external-icongeek26-outline-icongeek26/100/null/external-car-seat-car-parts-and-service-icongeek26-outline-icongeek26.png"
+    },
+    {
+      "title": "Doors",
+      "imgPath": "https://img.icons8.com/wired/100/null/car-door.png"
+    },
+    {
+      "title": "Horse Power",
+      "imgPath": "https://img.icons8.com/wired/100/null/lightning-bolt.png"
+    },
+    {
+      "title": "Location",
+      "imgPath": "https://img.icons8.com/ios/100/null/place-marker--v1.png"
+    },
+    {
+      "title": "Interior Color",
+      "imgPath": "https://img.icons8.com/carbon-copy/100/null/color-palette.png"
+    },
+    {
+      "title": "Security",
+      "imgPath": "https://img.icons8.com/dotty/100/null/car-rental.png"
+    }
+  ]
+}

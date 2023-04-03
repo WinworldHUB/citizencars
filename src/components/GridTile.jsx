@@ -2,16 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const GridTile = React.forwardRef((props, ref) => {
-  const { pic, isFeatured, name, price, buildYear, totalRun, transmission } =
+  const { pic, isFeatured, name, price, buildYear, totalRun, transmission, onClick } =
     props;
   return (
     <div className="col-lg-6 col-md-6">
       <div className="car-box" ref={ref}>
         <div className="photo-thumbnail">
           <div className="photo">
-            <img className="d-block w-100" src={pic} alt="car" />
-            <Link to="/">
-              <span className="blog-one__plus"></span>
+            <img className="d-block w-100" src={pic[0]} alt="car" />
+            <Link onClick={onClick}>
+              <i class="fa-regular fa-eye"></i>
             </Link>
           </div>
           {isFeatured && <div className="tag">Featured</div>}
@@ -19,7 +19,7 @@ const GridTile = React.forwardRef((props, ref) => {
         <div className="detail">
           <div className="top">
             <h1>
-              <a href="car-details.html">{name}</a>
+              <Link onClick={onClick}>{name}</Link>
               <span>{price}</span>
             </h1>
             <p>
