@@ -41,9 +41,9 @@ const Header = forwardRef((props, ref) => (
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link bg-light b-0" href="javascript;">
+              <Link className="nav-link bg-light b-0" to="/signin">
                 Login
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
