@@ -40,10 +40,45 @@ const Header = forwardRef((props, ref) => (
                 Our Collection
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item dropdown">
               <Link className="nav-link bg-light b-0" to="/signin">
                 Login
               </Link>
+              <ul
+                className="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li>
+                  <a
+                    className="dropdown-item d-flex align-items-center"
+                    href="javascript;"
+                  >
+                    <i className="fa-solid fa-heart"></i>&nbsp;
+                    <label className="clickable">My Wish List</label>
+                  </a>
+                </li>
+                <li>
+                  <hr />
+                </li>
+                <li>
+                  <a
+                    className="dropdown-item d-flex align-items-center"
+                    href="javascript;"
+                  >
+                    <i class="fa-solid fa-circle-info"></i>&nbsp;
+                    <label className="clickable">Help</label>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="dropdown-item d-flex align-items-center"
+                    href="javascript;"
+                  >
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;
+                    <label className="clickable">Sign out</label>
+                  </a>
+                </li>
+              </ul>
             </li>
           </ul>
         </nav>
