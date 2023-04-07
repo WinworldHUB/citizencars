@@ -1,5 +1,6 @@
 import DefaultLayout from "../layouts/DefaultLayout";
 import Checkbox from "../elements/Checkbox";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   return (
@@ -69,19 +70,14 @@ const Signup = () => {
                 placeholder="password"
               />
             </div>
-            <div className="d-flex justify-content-between">
-              <div className="form-group">
-                <Checkbox
-                  title="Private Seller"
-                  onChecked={(isChecked) => {
-                    console.log(isChecked);
-                  }}
-                  className="text-white"
-                ></Checkbox>
-              </div>
-              <div className="form-group">
-                <span className="text-white clickable">Forgot password</span>
-              </div>
+            <div className="form-group">
+              <Checkbox
+                title="Private Seller"
+                onChecked={(isChecked) => {
+                  console.log(isChecked);
+                }}
+                className="text-white"
+              ></Checkbox>
             </div>
             <div className="form-group">
               <Checkbox
@@ -94,8 +90,15 @@ const Signup = () => {
             </div>
           </div>
 
-          <div className="form-group">
-            <button className="btn btn-primary">Registration</button>
+          <div className="d-flex justify-content-between align-items-center">
+            <div className="form-group">
+              <button className="btn btn-primary">Register</button>
+            </div>
+            <div className="form-group text-white">
+              <Link className="text-white btn btn-dark" to="/signin">
+                Sign In
+              </Link>
+            </div>
           </div>
         </div>
       </div>

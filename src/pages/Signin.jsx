@@ -68,6 +68,11 @@ const Signin = () => {
           <div className="form-group">
             <button className="btn btn-primary">Login</button>
           </div>
+          <div className="form-group">
+            <div>
+              Don't have any account? <Link className="text-primary" to="/signup">Register now!</Link>
+            </div>
+          </div>
         </div>
       </div>
     </DefaultLayout>
