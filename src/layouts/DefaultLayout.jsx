@@ -12,7 +12,7 @@ const DefaultLayout = ({ isTopMarginRequired = true, children }) => {
     <React.Fragment>
       <Header />
       {isTopMarginRequired && (
-        <div style={{ backgroundColor: "black", height: "130px" }}>&nbsp;</div>
+        <div style={{ backgroundColor: 'black', height: '130px' }}>&nbsp;</div>
       )}
       {children}
       <Footer />

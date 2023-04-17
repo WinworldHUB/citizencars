@@ -95,7 +95,7 @@ const CarDetail = (props) => {
         <br />
         <div className="row row-cols-5">
           {data.carSpecs.map((specs) => (
-            <div className={`col`} key={specs.title}>
+            <div className={`col pb-5`} key={specs.title}>
               <IconTile {...specs} />
             </div>
           ))}
