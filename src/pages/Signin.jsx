@@ -2,15 +2,26 @@ import DefaultLayout from '../layouts/DefaultLayout';
 import Checkbox from '../elements/Checkbox';
 import { Link } from 'react-router-dom';
 import DBService from '../DBService';
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Inputbox from '../elements/Inputbox';
 import Notification from '../components/Notification';
+import { LocalDataContext } from '../App';
+import { useNavigate } from 'react-router-dom';
 
 const Signin = () => {
+  const { userId, setUserId } = useContext(LocalDataContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [notification, setNotification] = useState('');
+  const navigate = useNavigate();
+
+  console.log(userId);
+  useEffect(() => {
+    if (userId) {
+      navigate('/mywish');
+    }
+  }, []);
 
   return (
     <DefaultLayout>
@@ -88,8 +99,9 @@ const Signin = () => {
                   password,
                   (response) => {
                     console.log(response);
-                    setNotification(response);
+                    setUserId(response);
                     setIsLoading(false);
+                    navigate('/mywish');
                   },
                   (error) => {
                     console.log(error);
