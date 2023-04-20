@@ -1,6 +1,6 @@
 import DefaultLayout from '../layouts/DefaultLayout';
 import Checkbox from '../elements/Checkbox';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Inputbox from '../elements/Inputbox';
 import { useState } from 'react';
 import Dialog from '../components/Dialog';
@@ -14,8 +14,54 @@ const Signup = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [notification, setNotification] = useState('');
-  const [isFormReady, setIsFormReady] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isPrivateSeller, setIsPrivateSeller] = useState(false);
+  const [isAcceptPolicy, setIsAcceptPolicy] = useState(false);
+  const navigateTo = useNavigate();
+
+  const register = () => {
+    setIsLoading(true);
+    DBService.register(
+      name,
+      phone,
+      username,
+      password,
+      () => {
+        setNotification('');
+        setConfirmPassword('');
+        setIsLoading(false);
+        navigateTo('/signin');
+      },
+      (error) => {
+        console.log(error);
+        setNotification(error);
+        setIsLoading(false);
+      }
+    );
+  };
+
+  const validateForm = () => {
+    setNotification('');
+    setConfirmPassword('');
+    if (
+      name.trim() === '' ||
+      username.trim() === '' ||
+      phone.trim() === '' ||
+      password.trim() === ''
+    ) {
+      setNotification('Please enter details for registration');
+    } else if (!isAcceptPolicy) {
+      setNotification('Please accept our policy to continue with registration');
+    } else if (!confirmPassword) {
+      // eslint-disable-next-line no-undef
+      var myModal = new bootstrap.Modal(document.getElementById('testModal'));
+      myModal.show();
+    } else if (confirmPassword !== password) {
+      setNotification('Password mismatch. Please try again');
+    } else {
+      register();
+    }
+  };
 
   return (
     <DefaultLayout>
@@ -44,9 +90,7 @@ const Signup = () => {
         >
           <h3 className="text-white">Log in to your account</h3>
           <p className="text-white">Create new account today.</p>
-          <p className="text-white">Continue with</p>
-          <img src="/assets/img/Google-Logo-Meaning_F 1.png" alt="" />
-          <p className="pt-3 text-white">or</p>
+          <br />
           <div className="text-start pb-5">
             <div className="form-group">
               <Inputbox
@@ -90,7 +134,7 @@ const Signup = () => {
               <Checkbox
                 title="Private Seller"
                 onChecked={(isChecked) => {
-                  console.log(isChecked);
+                  setIsPrivateSeller(isChecked);
                 }}
                 className="text-white"
               ></Checkbox>
@@ -99,7 +143,7 @@ const Signup = () => {
               <Checkbox
                 title="I accept the privacy policy"
                 onChecked={(isChecked) => {
-                  console.log(isChecked);
+                  setIsAcceptPolicy(isChecked);
                 }}
                 className="text-white"
               ></Checkbox>
@@ -111,31 +155,7 @@ const Signup = () => {
               <button
                 disabled={isLoading}
                 className="btn btn-primary"
-                data-bs-toggle={isFormReady ? '' : 'modal'}
-                data-bs-target={isFormReady ? '' : '#testModal'}
-                onClick={() => {
-                  setNotification('');
-                  setConfirmPassword('');
-
-                  if (isFormReady) {
-                    DBService.register(
-                      name,
-                      phone,
-                      username,
-                      password,
-                      (response) => {
-                        console.log(response);
-                        setNotification(response);
-                        setIsLoading(false);
-                      },
-                      (error) => {
-                        console.log(error);
-                        setNotification(error);
-                        setIsLoading(false);
-                      }
-                    );
-                  }
-                }}
+                onClick={validateForm}
               >
                 {isLoading ? (
                   <i className="fa fa-spinner fa-spin"></i>
@@ -160,16 +180,9 @@ const Signup = () => {
         actionTitle="Confirm"
         id="testModal"
         title="Confirm Password"
-        onAction={() => {
-          if (!confirmPassword || confirmPassword !== password) {
-            setNotification('Password mismatch. Please try again');
-            setIsFormReady(false);
-          } else {
-            setIsFormReady(true);
-          }
-        }}
+        onAction={validateForm}
         onCanceled={() => {
-          setIsFormReady(false);
+          setNotification('Please confirm password to proceed');
         }}
       >
         <div className="form-group">

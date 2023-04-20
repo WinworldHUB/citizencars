@@ -7,6 +7,7 @@ import Inputbox from '../elements/Inputbox';
 import Notification from '../components/Notification';
 import { LocalDataContext } from '../App';
 import { useNavigate } from 'react-router-dom';
+import { KEY } from '../constants';
 
 const Signin = () => {
   const { userId, setUserId } = useContext(LocalDataContext);
@@ -14,9 +15,10 @@ const Signin = () => {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [notification, setNotification] = useState('');
+  const [rememberMe, setRememberMe] = useState(false);
   const navigate = useNavigate();
 
-  console.log(userId);
+  //console.log(userId);
   useEffect(() => {
     if (userId) {
       navigate('/mywish');
@@ -49,9 +51,7 @@ const Signin = () => {
         >
           <h3>Log in to your account</h3>
           <p>Welcome back ! Sing in to your account</p>
-          <p>Continue with</p>
-          <img src="/assets/img/Google-Logo-Meaning_F 1.png" alt="" />
-          <p className="pt-3">or</p>
+          <br/>
           <div className="text-start pb-5">
             <div className="form-group">
               <Inputbox
@@ -78,7 +78,7 @@ const Signin = () => {
                 <Checkbox
                   title="Remember me"
                   onChecked={(isChecked) => {
-                    console.log(isChecked);
+                    setRememberMe(isChecked)
                   }}
                 ></Checkbox>
               </div>
@@ -101,6 +101,11 @@ const Signin = () => {
                     console.log(response);
                     setUserId(response);
                     setIsLoading(false);
+                    if (rememberMe) {
+                      localStorage.setItem(KEY, response); 
+                    } else {
+                      localStorage.removeItem(KEY); 
+                    }
                     navigate('/mywish');
                   },
                   (error) => {
