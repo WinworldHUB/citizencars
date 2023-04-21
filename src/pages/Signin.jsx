@@ -109,14 +109,20 @@ const Signin = () => {
                   password,
                   (response) => {
                     console.log(response);
-                    setUserId(response);
-                    setIsLoading(false);
-                    if (rememberMe) {
-                      localStorage.setItem(KEY, response);
+                    if (response.role === 'user') {
+                      setUserId(response.id);
+                      setIsLoading(false);
+                      if (rememberMe) {
+                        localStorage.setItem(KEY, response.id);
+                      } else {
+                        localStorage.removeItem(KEY);
+                      }
+                      navigate('/mywish');
+                    } else if (response.role === 'admin') {
+                      navigate('/admin');
                     } else {
-                      localStorage.removeItem(KEY);
+                      setNotification('Unknown user. Please try again.');
                     }
-                    navigate('/mywish');
                   },
                   (error) => {
                     console.log(error);

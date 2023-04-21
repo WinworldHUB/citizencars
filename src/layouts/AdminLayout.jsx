@@ -17,7 +17,7 @@ const AdminLayout = ({ children, isLoggedIn = false, onOpenFile }) => {
                 {isLoggedIn && (
                   <li className="nav-item">
                     <label
-                      for="uploadData"
+                      htmlFor="uploadData"
                       className="nav-link text-white bg-primary clickable"
                     >
                       Upload Data

@@ -6,6 +6,8 @@ import DBService from '../DBService';
 import ListView from '../components/ListView';
 import data from '../Data.json';
 import * as XLSX from 'xlsx';
+import { CAR_ATTRIBUTES } from '../constants';
+import InProgress from '../components/InProgress';
 
 const Admin = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -13,6 +15,27 @@ const Admin = () => {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [notification, setNotification] = useState('');
+  const [isUploading, setIsUploading] = useState(false);
+
+  const processData = (dataFromExcel) => {
+    if (dataFromExcel) {
+      setIsUploading(true);
+      const excelDataRows = Array.from(dataFromExcel);
+      const dataRowsToExclude = [];
+
+      excelDataRows.forEach((dataRow) => {
+        CAR_ATTRIBUTES.forEach((attribute) => {
+          if (!dataRow[attribute]) {
+            dataRowsToExclude.push(dataRow);
+          }
+        });
+      });
+
+      console.log(
+        excelDataRows.filter((item) => !dataRowsToExclude.includes(item))
+      );
+    }
+  };
 
   const loadData = (dataFile) => {
     var reader = new FileReader();
@@ -23,8 +46,8 @@ const Admin = () => {
       const ws = readedData.Sheets[wsname];
 
       /* Convert array to json*/
-      const dataParse = XLSX.utils.sheet_to_json(ws);
-      console.log(dataParse);
+      const dataParse = XLSX.utils.sheet_to_json(ws, { header: 2 });
+      processData(dataParse);
     };
     reader.readAsBinaryString(dataFile);
   };
@@ -91,7 +114,13 @@ const Admin = () => {
                     password,
                     (response) => {
                       console.log(response);
-                      setIsLoggedIn(true);
+                      if (response.role === 'admin') setIsLoggedIn(true);
+                      else {
+                        setNotification(
+                          'You are not authorized to use this section'
+                        );
+                        setIsLoggedIn(false);
+                      }
                       setIsLoading(false);
                     },
                     (error) => {
@@ -126,6 +155,7 @@ const Admin = () => {
           </div>
         </div>
       </div>
+      <InProgress isShow={isUploading} message="Uploading ..." />
     </AdminLayout>
   );
 };
