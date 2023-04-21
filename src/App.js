@@ -8,6 +8,7 @@ import Signup from './pages/Signup';
 import { createContext, useState } from 'react';
 import MyWishList from './pages/MyWishList';
 import Signout from './pages/Signout';
+import Admin from './pages/Admin';
 
 export const LocalDataContext = createContext();
 
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="/cars" element={<CarCollection />} />
           <Route path="/carDetails/:index" element={<CarDetail />} />
           <Route path="/carDetails" element={<CarDetail />} />

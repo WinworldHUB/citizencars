@@ -1199,6 +1199,10 @@ input[type=checkbox]:checked + label:before {
     background: #f9f9f8;
 }
 
+.bg-grey-4{
+    background-color: #F4F4F3;
+}
+
 .search-area-inner {
     margin: 0 auto;
 }

@@ -254,3 +254,102 @@ li a:hover {
 .btn {
   border-radius: 5px;
 }
+
+.advantages-box-wish {
+    margin: 0 0 30px 0;
+    width: 100%;
+    background: white;
+    padding: 30px 20px 10px;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 0px 2px rgba(255,255,255,0.2);
+    box-shadow: 0px 0px 0px 2px rgba(255,255,255,0.2);
+    border-radius: 5px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.9s;
+    position: relative;
+    z-index: 1;
+}
+
+.advantages-box-wish::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    border-radius: 4px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.9s;
+    z-index: -1;
+}
+
+.advantages-box-wish:hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+.advantages-box-wish .icon {
+    border-radius: 50%;
+    border: var(--bs-primary) solid 1px;
+    margin: 0 auto 20px;
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+    top: 0;
+    font-size: 35px;
+    color: #ccc;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.advantages-box-wish:hover .icon {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    background: #fff;
+}
+
+.advantages-box-wish h5{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.advantages-box-wish h5 a{
+    color: #656565;
+}
+
+.advantages-box-wish p{
+    font-size: 15px;
+    color: #fff;
+    opacity: 0.9;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.advantages-box-wish:hover::before {
+    height: 100%;
+}
+
+.like-icon {
+  position: absolute;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 50px;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--bs-primary);
+}
+
+.like-icon i{
+  font-size: 12px;
+}
+
+.relative-position {
+  position: relative;
+}

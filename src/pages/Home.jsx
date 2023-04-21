@@ -1,12 +1,12 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Scrollbar, Pagination } from "swiper";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import DefaultLayout from "../layouts/DefaultLayout";
-import BGOverlaySection from "../components/BGOverlaySection";
-import data from "../Data.json";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Scrollbar, Pagination } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import DefaultLayout from '../layouts/DefaultLayout';
+import BGOverlaySection from '../components/BGOverlaySection';
+import data from '../Data.json';
 
 const Home = () => {
   return (
@@ -27,7 +27,7 @@ const Home = () => {
               <div className="carousel-content container text-center banner-info-2 bi-2 text-white d-flex flex-column justify-content-between h-100">
                 <div className="pt-5">
                   <p className="text-white display-5">
-                    Purchase car fast like a{" "}
+                    Purchase car fast like a{' '}
                     <span className="text-red text-bold text-uppercase">
                       Rocket
                     </span>
@@ -108,7 +108,7 @@ const Home = () => {
               Planning to <span className="text-red text-uppercase">Sell?</span>
             </p>
             <p className="display-6">
-              Purchase CAR in{" "}
+              Purchase CAR in{' '}
               <span className="text-red text-bold text-uppercase">
                 29 Minutes
               </span>
@@ -181,7 +181,7 @@ const Home = () => {
         ))}
       </Swiper>
 
-      <div className="content-area bg-grey pt-4">
+      <div className="content-area bg-grey-4 pt-4">
         <div className="row g-0">
           <div className="col-12">
             <h1 className="display-1 text-light-50 text-thin">About us</h1>
@@ -368,10 +368,56 @@ const Home = () => {
               </div>
             </div>
           </div>
+          <div className="row">
+            <div className="col-8 offset-2">
+              <div className="row row-cols-3">
+                <div className="col pb-md-4">
+                  <div className="advantages-box-wish h-100">
+                    <div className="icon">
+                      <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <div className="detail">
+                      <h5 className="text-muted">
+                        <a href="javascript;">Expert Review On Luxury Cars</a>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+                <div className="col pb-md-4">
+                  <div className="advantages-box-wish h-100">
+                    <div className="icon">
+                      <i class="fa-solid fa-car"></i>
+                    </div>
+                    <div className="detail">
+                      <h5>
+                        <a href="javascript;">Compare Your Favorite Cars</a>
+                        <p>&nbsp;</p>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+                <div className="col pb-md-4">
+                  <div className="advantages-box-wish h-100">
+                    <div className="icon">
+                      <i class="fa-regular fa-thumbs-up"></i>
+                    </div>
+                    <div className="detail">
+                      <h5>
+                        <a href="javascript;">
+                          More Than 317 Luxury Cars & It's In Depth
+                          Specifications
+                        </a>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="blog comon-slick content-area">
+      <div className="blog comon-slick content-area bg-grey-4">
         <div className="container">
           <div className="main-title">
             <h5 className="text-primary text-uppercase">Popular</h5>
@@ -391,46 +437,35 @@ const Home = () => {
             data-slick='{"slidesToShow": 3, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'
           >
             <Swiper
-              modules={[Navigation, Scrollbar]}
+              modules={[Navigation, Scrollbar, Pagination]}
+              loop={true}
               spaceBetween={0}
               slidesPerView={3}
               navigation={true}
+              keyboard={{
+                enabled: true,
+              }}
+              pagination={{
+                dynamicBullets: true,
+              }}
             >
               <SwiperSlide>
                 <div className="item slide-box">
                   <div className="blog-4">
-                    <div className="blog-photo">
+                    <div className="blog-photo relative-position">
                       <img
                         src="assets/img/blog/blog-2.jpg"
                         alt="blog"
                         className="img-fluid"
                       />
-                      <div className="date-box-2">27 Feb</div>
-                      <div className="post-meta clearfix">
-                        <span>
-                          <a href="javascript;">
-                            <i className="flaticon-user-1"></i>
-                          </a>
-                          Admin
-                        </span>
-                        <span>
-                          <a href="javascript;">
-                            <i className="flaticon-comment"></i>
-                          </a>
-                          17K
-                        </span>
-                        <span>
-                          <a href="javascript;">
-                            <i className="flaticon-calendar"></i>
-                          </a>
-                          73k
-                        </span>
+                      <div className="like-icon">
+                        <i class="fa-solid fa-heart"></i>
                       </div>
                     </div>
-                    <div className="detail">
+                    <div className="detail border-top border-primary">
                       <p>2022 BMW X7 XDRIVER30D DPE SIGNATURE</p>
                       <span className="text-sm">
-                        REG.YEAR - 2021 | KMS - 25000 | FUEL TYPE - Diesel{" "}
+                        REG.YEAR - 2021 | KMS - 25000 | FUEL TYPE - Diesel{' '}
                       </span>
                     </div>
                   </div>
@@ -439,38 +474,20 @@ const Home = () => {
               <SwiperSlide>
                 <div className="item slide-box">
                   <div className="blog-4">
-                    <div className="blog-photo">
+                    <div className="blog-photo relative-position">
                       <img
                         src="assets/img/blog/blog-1.jpg"
                         alt="blog"
                         className="img-fluid"
                       />
-                      <div className="date-box-2">14 Aug</div>
-                      <div className="post-meta clearfix">
-                        <span>
-                          <a href="javascript;">
-                            <i className="flaticon-user-1"></i>
-                          </a>
-                          Admin
-                        </span>
-                        <span>
-                          <a href="javascript;">
-                            <i className="flaticon-comment"></i>
-                          </a>
-                          17K
-                        </span>
-                        <span>
-                          <a href="javascript;">
-                            <i className="flaticon-calendar"></i>
-                          </a>
-                          73k
-                        </span>
+                      <div className="like-icon">
+                        <i class="fa-solid fa-heart"></i>
                       </div>
                     </div>
-                    <div className="detail">
+                    <div className="detail border-top border-primary">
                       <p>Audi Q8 XDRIVER30D DPE SIGNATURE</p>
                       <span className="text-sm">
-                        REG.YEAR - 2021 | KMS - 25000 | FUEL TYPE - Diesel{" "}
+                        REG.YEAR - 2021 | KMS - 25000 | FUEL TYPE - Diesel{' '}
                       </span>
                     </div>
                   </div>
@@ -479,38 +496,20 @@ const Home = () => {
               <SwiperSlide>
                 <div className="item slide-box">
                   <div className="blog-4">
-                    <div className="blog-photo">
+                    <div className="blog-photo relative-position">
                       <img
                         src="assets/img/blog/blog-2.jpg"
                         alt="blog"
                         className="img-fluid"
                       />
-                      <div className="date-box-2">14 Sep</div>
-                      <div className="post-meta clearfix">
-                        <span>
-                          <a href="javascript;">
-                            <i className="flaticon-user-1"></i>
-                          </a>
-                          Admin
-                        </span>
-                        <span>
-                          <a href="javascript;">
-                            <i className="flaticon-comment"></i>
-                          </a>
-                          17K
-                        </span>
-                        <span>
-                          <a href="javascript;">
-                            <i className="flaticon-calendar"></i>
-                          </a>
-                          73k
-                        </span>
+                      <div className="like-icon">
+                        <i class="fa-solid fa-heart"></i>
                       </div>
                     </div>
-                    <div className="detail">
+                    <div className="detail border-top border-primary">
                       <p>JAGUAR XDRIVER30D DPE SIGNATURE 1</p>
                       <span className="text-sm">
-                        REG.YEAR - 2021 | KMS - 25000 | FUEL TYPE - Diesel{" "}
+                        REG.YEAR - 2021 | KMS - 25000 | FUEL TYPE - Diesel{' '}
                       </span>
                     </div>
                   </div>
@@ -519,13 +518,15 @@ const Home = () => {
               <SwiperSlide>
                 <div className="item slide-box">
                   <div className="blog-4">
-                    <div className="blog-photo">
+                    <div className="blog-photo relative-position">
                       <img
                         src="assets/img/blog/blog-3.jpg"
                         alt="blog"
                         className="img-fluid"
                       />
-                      <div className="date-box-2">14 Nov</div>
+                      <div className="like-icon">
+                        <i class="fa-solid fa-heart"></i>
+                      </div>
                       <div className="post-meta clearfix">
                         <span>
                           <a href="javascript;">
@@ -550,7 +551,7 @@ const Home = () => {
                     <div className="detail">
                       <p>JAGUAR XDRIVER30D DPE SIGNATURE 1</p>
                       <span className="text-sm">
-                        REG.YEAR - 2021 | KMS - 25000 | FUEL TYPE - Diesel{" "}
+                        REG.YEAR - 2021 | KMS - 25000 | FUEL TYPE - Diesel{' '}
                       </span>
                     </div>
                   </div>
@@ -590,7 +591,7 @@ const Home = () => {
                     </div>
                     <div className="detail">
                       <h5>
-                        <a href="services.html">Expert Review On Luxury Cars</a>
+                        <a href="javascript;">Expert Review On Luxury Cars</a>
                       </h5>
                     </div>
                   </div>
@@ -602,7 +603,7 @@ const Home = () => {
                     </div>
                     <div className="detail">
                       <h5>
-                        <a href="services.html">Compare Your Favorite Cars</a>
+                        <a href="javascript;">Compare Your Favorite Cars</a>
                         <p>&nbsp;</p>
                       </h5>
                     </div>
@@ -615,7 +616,7 @@ const Home = () => {
                     </div>
                     <div className="detail">
                       <h5>
-                        <a href="services.html">
+                        <a href="javascript;">
                           More Than 317 Luxury Cars &It's In Depth
                           Specifications
                         </a>
@@ -630,7 +631,7 @@ const Home = () => {
                     </div>
                     <div className="detail">
                       <h5>
-                        <a href="services.html">Expert Review On Luxury Cars</a>
+                        <a href="javascript;">Expert Review On Luxury Cars</a>
                       </h5>
                     </div>
                   </div>
@@ -644,7 +645,7 @@ const Home = () => {
       <div className="blog comon-slick content-area">
         <div className="container text-center">
           <div className="main-title">
-            <h5 className="text-primary text-uppercase">New & Updates</h5>
+            <h5 className="text-primary text-uppercase">News & Updates</h5>
             <span className="mb-10 text-uppercase display-6">
               From the name here
             </span>
@@ -668,37 +669,27 @@ const Home = () => {
             >
               <SwiperSlide>
                 <div className="item slide-box">
-                  <div className="blog-4">
+                  <div className="blog-4" style={{ position: 'relative' }}>
                     <div className="blog-photo">
                       <img
-                        src="assets/img/wish/bmw.jpg"
+                        src="assets/img/wish/mercedes_benz_c_300_amg_line_2022_3_4k_hd_cars.jpg"
                         alt="blog"
                         className="img-fluid"
                       />
-                      <div className="post-meta clearfix">
-                        <span>
-                          <a href="javascript;">
-                            <i className="flaticon-user-1"></i>
-                          </a>
-                          Admin
-                        </span>
-                        <span>
-                          <a href="javascript;">
-                            <i className="flaticon-comment"></i>
-                          </a>
-                          17K
-                        </span>
-                        <span>
-                          <a href="javascript;">
-                            <i className="flaticon-calendar"></i>
-                          </a>
-                          73k
-                        </span>
-                      </div>
                     </div>
-                    <div className="detail">
-                      <p>2022 BMW X7 XDRIVER30D DPE SIGNATURE</p>
-                      <span className="text-sm">
+                    <div
+                      className="detail"
+                      style={{
+                        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                        textAlign: 'left',
+                        position: 'absolute',
+                        bottom: '0',
+                      }}
+                    >
+                      <p className="text-white">
+                        2022 BMW X7 XDRIVER30D DPE SIGNATURE
+                      </p>
+                      <span className="text-sm text-white">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing
                         elit, sed diam nonummy nibh euismod tincidunt ut laoreet
                         dolore magna aliquam erat volutpat. Ut wisi enim ad
@@ -712,37 +703,27 @@ const Home = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <div className="item slide-box">
-                  <div className="blog-4">
+                  <div className="blog-4" style={{ position: 'relative' }}>
                     <div className="blog-photo">
                       <img
                         src="assets/img/wish/5530214.jpg"
                         alt="blog"
                         className="img-fluid"
                       />
-                      <div className="post-meta clearfix">
-                        <span>
-                          <a href="javascript;">
-                            <i className="flaticon-user-1"></i>
-                          </a>
-                          Admin
-                        </span>
-                        <span>
-                          <a href="javascript;">
-                            <i className="flaticon-comment"></i>
-                          </a>
-                          17K
-                        </span>
-                        <span>
-                          <a href="javascript;">
-                            <i className="flaticon-calendar"></i>
-                          </a>
-                          73k
-                        </span>
-                      </div>
                     </div>
-                    <div className="detail">
-                      <p>Audi Q8 XDRIVER30D DPE SIGNATURE</p>
-                      <span className="text-sm">
+                    <div
+                      className="detail"
+                      style={{
+                        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                        textAlign: 'left',
+                        position: 'absolute',
+                        bottom: '0',
+                      }}
+                    >
+                      <p className="text-white">
+                        Audi Q8 XDRIVER30D DPE SIGNATURE
+                      </p>
+                      <span className="text-sm text-white">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing
                         elit, sed diam nonummy nibh euismod tincidunt ut laoreet
                         dolore magna aliquam erat volutpat.

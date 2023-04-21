@@ -10,9 +10,9 @@ const ListView = React.forwardRef((props, ref) => {
   return (
     <>
       <div className="option-bar clearfix" ref={ref}>
-        <div className="sorting-options2">
-          <span className="sort">Sort by:</span>
-          <select className="selectpicker search-fields" name="default-order">
+        <div className="sorting-options2 row">
+          <span className="sort col-4">Sort by:</span>
+          <select className="form-control col" name="default-order">
             <option>Default Order</option>
             <option>Price High to Low</option>
             <option>Price: Low to High</option>
