@@ -8,6 +8,7 @@ import Notification from '../components/Notification';
 import { LocalDataContext } from '../App';
 import { useNavigate } from 'react-router-dom';
 import { KEY } from '../constants';
+import Dialog from '../components/Dialog';
 
 const Signin = () => {
   const { userId, setUserId } = useContext(LocalDataContext);
@@ -51,7 +52,7 @@ const Signin = () => {
         >
           <h3>Log in to your account</h3>
           <p>Welcome back ! Sing in to your account</p>
-          <br/>
+          <br />
           <div className="text-start pb-5">
             <div className="form-group">
               <Inputbox
@@ -78,12 +79,21 @@ const Signin = () => {
                 <Checkbox
                   title="Remember me"
                   onChecked={(isChecked) => {
-                    setRememberMe(isChecked)
+                    setRememberMe(isChecked);
                   }}
                 ></Checkbox>
               </div>
               <div className="form-group">
-                <span className="text-primary clickable">Forgot password</span>
+                <span
+                  className="text-primary clickable"
+                  data-bs-target="#forgotPassword"
+                  data-bs-toggle="modal"
+                  onClick={() => {
+                    setNotification('');
+                  }}
+                >
+                  Forgot password
+                </span>
               </div>
             </div>
           </div>
@@ -102,9 +112,9 @@ const Signin = () => {
                     setUserId(response);
                     setIsLoading(false);
                     if (rememberMe) {
-                      localStorage.setItem(KEY, response); 
+                      localStorage.setItem(KEY, response);
                     } else {
-                      localStorage.removeItem(KEY); 
+                      localStorage.removeItem(KEY);
                     }
                     navigate('/mywish');
                   },
@@ -129,6 +139,30 @@ const Signin = () => {
           </div>
         </div>
       </div>
+      <Dialog
+        actionTitle="Reset Password"
+        id="forgotPassword"
+        title="Reset Password"
+        onAction={() => {
+          if (username !== '') {
+            alert('Password reset email sent');
+            setUsername('');
+          } else setNotification('Please enter username to proceed.');
+        }}
+        onCanceled={() => {}}
+      >
+        <div className="form-group">
+          <label htmlFor="txtConfirmPassword">Your username</label>
+          <Inputbox
+            id="txtForgotPassword"
+            onChange={(newValue) => {
+              setUsername(newValue);
+            }}
+            placeholder="Enter your username"
+            value={username}
+          />
+        </div>
+      </Dialog>
     </DefaultLayout>
   );
 };
