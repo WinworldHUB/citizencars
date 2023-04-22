@@ -1,33 +1,61 @@
 import { useEffect } from 'react';
 
-const InProgress = ({ isShow = false, message = '' }) => {
+export const INPROGRESS_WORKING = 0;
+export const INPROGRESS_SUCCESS = 1;
+export const INPROGRESS_FAILED = 2;
+
+const InProgress = ({ message = '', state = INPROGRESS_WORKING }) => {
   useEffect(() => {
     // eslint-disable-next-line no-undef
     var myModal = new bootstrap.Modal(document.getElementById('dlgInProgress'));
-    if (isShow === true) myModal.show();
+    if (message) myModal.show();
     else myModal.hide();
-  }, [isShow]);
+  }, [message]);
+
+  const getInprogressImage = () => {
+    switch (state) {
+      case INPROGRESS_SUCCESS:
+        return '/assets/img/loader.gif';
+
+      case INPROGRESS_FAILED:
+        return '/assets/img/loader.gif';
+
+      default:
+        return '/assets/img/loader.gif';
+    }
+  };
+
+  const getInprogressAlt = () => {
+    switch (state) {
+      case INPROGRESS_SUCCESS:
+        return 'completed with success';
+
+      case INPROGRESS_FAILED:
+        return 'completed with failure';
+
+      default:
+        return 'working...';
+    }
+  };
 
   return (
     <div
-      class="modal fade"
+      className="modal fade"
       id="dlgInProgress"
-      tabindex="-1"
+      tabIndex="-1"
       aria-labelledby="InProgressLabel"
       aria-hidden="true"
       data-bs-backdrop="static"
       data-bs-keyboard="false"
     >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-body d-flex align-items-center justify-content-center flex-column">
-            <img
-              src="/assets/img/loader-01.gif"
-              alt="uploading..."
-              style={{ width: '200px' }}
-            />
-            <label className="lead text-uppercase">{message}</label>
-          </div>
+      <div className="modal-dialog modal-dialog-centered">
+        <div className="modal-content">
+          {message && (
+            <div className="modal-body d-flex align-items-center justify-content-center flex-column">
+              <img src={getInprogressImage()} alt={getInprogressAlt()} />
+              <label className="lead text-uppercase">{message}</label>
+            </div>
+          )}
         </div>
       </div>
     </div>

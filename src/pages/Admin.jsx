@@ -1,27 +1,46 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AdminLayout from '../layouts/AdminLayout';
 import Inputbox from '../elements/Inputbox';
 import Notification from '../components/Notification';
 import DBService from '../DBService';
 import ListView from '../components/ListView';
-import data from '../Data.json';
 import * as XLSX from 'xlsx';
 import { CAR_ATTRIBUTES } from '../constants';
-import InProgress from '../components/InProgress';
 
 const Admin = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('admin@carz.com');
+  const [password, setPassword] = useState('password@1');
   const [isLoading, setIsLoading] = useState(false);
   const [notification, setNotification] = useState('');
-  const [isUploading, setIsUploading] = useState(false);
+  //const [inProgress, setInProgress] = useState(false);
+  const [inProgressMessage, setInProgressMessage] = useState('');
+  const [cars, setCars] = useState(null);
+
+  const getCars = () => {
+    DBService.getCars(
+      (response) => {
+        if (Array.isArray(response) && response.length > 0) {
+          setCars(response);
+          setInProgressMessage('');
+        } else {
+          setInProgressMessage('No cars found. Use upload cars to upload data');
+        }
+      },
+      (err) => {
+        setInProgressMessage(err.data);
+        setInProgressMessage('');
+      }
+    );
+  };
 
   const processData = (dataFromExcel) => {
     if (dataFromExcel) {
-      setIsUploading(true);
       const excelDataRows = Array.from(dataFromExcel);
       const dataRowsToExclude = [];
+      const output = { columns: [], values: [] };
+
+      output.columns.push(...CAR_ATTRIBUTES);
 
       excelDataRows.forEach((dataRow) => {
         CAR_ATTRIBUTES.forEach((attribute) => {
@@ -31,13 +50,37 @@ const Admin = () => {
         });
       });
 
-      console.log(
-        excelDataRows.filter((item) => !dataRowsToExclude.includes(item))
+      const qualifiedRows = excelDataRows.filter(
+        (item) => !dataRowsToExclude.includes(item)
+      );
+
+      qualifiedRows.forEach((row) => {
+        const rowValues = [];
+        CAR_ATTRIBUTES.forEach((attribute) => {
+          rowValues.push(row[attribute]);
+        });
+        output.values.push(rowValues);
+      });
+
+      DBService.uploadCars(
+        output,
+        (response) => {
+          console.log(response);
+          // setCars(response.values);
+          // setInProgressMessage('');
+          setInProgressMessage('Loading cars');
+          getCars();
+        },
+        (err) => {
+          setNotification(err.data);
+          setInProgressMessage('');
+        }
       );
     }
   };
 
   const loadData = (dataFile) => {
+    setInProgressMessage('Uploading cars');
     var reader = new FileReader();
     reader.onload = function (e) {
       var data = e.target.result;
@@ -51,6 +94,13 @@ const Admin = () => {
     };
     reader.readAsBinaryString(dataFile);
   };
+
+  useEffect(() => {
+    if (isLoggedIn === true) {
+      setInProgressMessage('Loading cars');
+      getCars();
+    }
+  }, [isLoggedIn]);
 
   if (!isLoggedIn) {
     return (
@@ -144,18 +194,34 @@ const Admin = () => {
     );
   }
 
+  if (inProgressMessage !== '') {
+    return (
+      <AdminLayout isLoggedIn={isLoggedIn} onOpenFile={loadData}>
+        <div className="featured-car content-area">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+                <img src="/assets/img/loader.gif" alt="Working ..." />
+              </div>
+              <div className="col-md-12">{inProgressMessage}</div>
+            </div>
+          </div>
+        </div>
+      </AdminLayout>
+    );
+  }
+
   return (
     <AdminLayout isLoggedIn={isLoggedIn} onOpenFile={loadData}>
       <div className="featured-car content-area">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <ListView cars={data.cars} onClick={() => {}} />
+              {cars && <ListView cars={cars} onClick={() => {}} />}
             </div>
           </div>
         </div>
       </div>
-      <InProgress isShow={isUploading} message="Uploading ..." />
     </AdminLayout>
   );
 };

@@ -1,11 +1,14 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import GridTile from "./GridTile";
-import ListTile from "./ListTile";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import GridTile from './GridTile';
+import ListTile from './ListTile';
+import numeral from 'numeral';
 
 const ListView = React.forwardRef((props, ref) => {
   const { cars, onClick } = props;
   const [isList, setIsList] = useState(true);
+
+  console.log(cars);
 
   return (
     <>
@@ -23,7 +26,7 @@ const ListView = React.forwardRef((props, ref) => {
         <div className="sorting-options float-right">
           <Link
             className={`change-view-btn clickable ${
-              isList && "active-view-btn"
+              isList && 'active-view-btn'
             }`}
             onClick={() => setIsList(true)}
           >
@@ -31,7 +34,7 @@ const ListView = React.forwardRef((props, ref) => {
           </Link>
           <Link
             className={`change-view-btn clickable ${
-              !isList && "active-view-btn"
+              !isList && 'active-view-btn'
             }`}
             onClick={() => setIsList(false)}
           >
@@ -42,13 +45,39 @@ const ListView = React.forwardRef((props, ref) => {
       {isList === false ? (
         <div className="row">
           {cars.map((car, index) => (
-            <GridTile {...car} key={index} onClick={(e) => onClick(e, index)} />
+            <GridTile
+              name={car.brand}
+              buildYear={car['Registered In']}
+              totalRun={car['Kilometer Driven']}
+              transmission={car['TransmissionType']}
+              Price={numeral(car['Price']).format('$ 0,0.00')}
+              Pics={Array.from(car.Pics?.split('\n') ?? '')[0]}
+              key={index}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onClick(car['Sr. No.']);
+              }}
+            />
           ))}
         </div>
       ) : (
         <>
           {cars.map((car, index) => (
-            <ListTile {...car} key={index} onClick={(e) => onClick(e, index)} />
+            <ListTile
+              name={car.brand}
+              buildYear={car['Registered In']}
+              totalRun={car['Kilometer Driven']}
+              transmission={car['TransmissionType']}
+              Price={numeral(car['Price']).format('$ 0,0.00')}
+              key={index}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onClick(car['Sr. No.']);
+              }}
+              Pics={Array.from(car.Pics?.split('\n') ?? '')[0]}
+            />
           ))}
         </>
       )}
@@ -87,6 +116,6 @@ const ListView = React.forwardRef((props, ref) => {
   );
 });
 
-ListView.displayName = "ListView";
+ListView.displayName = 'ListView';
 
 export default ListView;

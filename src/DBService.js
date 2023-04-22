@@ -1,8 +1,8 @@
 import axios from 'axios';
+import { FAILURE } from './constants';
 
 axios.defaults.baseURL = 'https://citizencarsbe.onrender.com/';
-const SUCCESS = 'success';
-const FAILURE = 'failure';
+//axios.defaults.baseURL = 'http://localhost:8080/';
 
 const DBService = {
   authenticate: (username, password, onSuccess, onFailure) => {
@@ -32,6 +32,56 @@ const DBService = {
           onFailure && onFailure(responseValue.data);
         } else {
           onSuccess && onSuccess(responseValue.data);
+        }
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  },
+
+  getCar: (SrNo, onSuccess, onFailure) => {
+    axios
+      .post('/car', { SrNo: SrNo })
+      .then((response) => {
+        const responseValue = response.data;
+        if (responseValue.status === FAILURE) {
+          onFailure && onFailure(responseValue.data);
+        } else {
+          onSuccess && onSuccess(responseValue.data);
+        }
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  },
+
+  getCars: (onSuccess, onFailure) => {
+    axios
+      .get('/cars', {})
+      .then((response) => {
+        const responseValue = response.data;
+        //console.log(responseValue);
+        if (responseValue.status === FAILURE) {
+          onFailure && onFailure(responseValue.data);
+        } else {
+          onSuccess && onSuccess(responseValue.data);
+        }
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  },
+
+  uploadCars: (cars, onSuccess, onFailure) => {
+    axios
+      .post('/upload', cars)
+      .then((response) => {
+        const responseValue = response.data;
+        //console.log(responseValue);
+        if (responseValue.status === FAILURE) {
+          onFailure && onFailure(responseValue);
+        } else {
+          onSuccess && onSuccess(responseValue);
         }
       })
       .catch((error) => {

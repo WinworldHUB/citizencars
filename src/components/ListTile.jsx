@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ListTile = React.forwardRef((props, ref) => {
-  const { pic, isFeatured, name, price, buildYear, totalRun, transmission, onClick } =
+  const { Pics, isFeatured, name, Price, buildYear, totalRun, transmission, onClick } =
     props;
   return (
     <div className="car-box-2">
@@ -11,8 +11,13 @@ const ListTile = React.forwardRef((props, ref) => {
           <div className="car-thumbnail">
             <Link className="car-img" onClick={onClick}>
               {isFeatured && <div className="tag">Featured</div>}
-              <div className="price-box-2">{price}</div>
-              <img className="d-block w-100" src={pic[0]} alt="car" />
+              <div className="price-box-2">{Price ?? 0}</div>
+              
+              <img
+                className="d-block w-100"
+                src={`/assets/img/cars/${Pics}`}
+                alt="car"
+              />
             </Link>
           </div>
         </div>
