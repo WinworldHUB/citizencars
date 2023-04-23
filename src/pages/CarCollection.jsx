@@ -25,8 +25,8 @@ const CarCollection = () => {
         }
       },
       (err) => {
-        setInProgressMessage(err.data);
-        setInProgressMessage('');
+        console.log(err.message ?? err);
+        setInProgressMessage(err.message ?? err);
       }
     );
   };

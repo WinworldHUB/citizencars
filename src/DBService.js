@@ -18,7 +18,7 @@ const DBService = {
         }
       })
       .catch((error) => {
-        throw new Error(error);
+        onFailure && onFailure(error);
       });
   },
 
@@ -35,7 +35,7 @@ const DBService = {
         }
       })
       .catch((error) => {
-        throw new Error(error);
+        onFailure && onFailure(error);
       });
   },
 
@@ -51,7 +51,7 @@ const DBService = {
         }
       })
       .catch((error) => {
-        throw new Error(error);
+        onFailure && onFailure(error);
       });
   },
 
@@ -68,7 +68,7 @@ const DBService = {
         }
       })
       .catch((error) => {
-        throw new Error(error);
+        onFailure && onFailure(error);
       });
   },
 
@@ -85,7 +85,7 @@ const DBService = {
         }
       })
       .catch((error) => {
-        throw new Error(error);
+        onFailure && onFailure(error);
       });
   },
 };

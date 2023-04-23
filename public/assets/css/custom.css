@@ -1,4 +1,3 @@
-
 /* Custom Styles */
 .nav-link {
   border: var(--bs-red) 1px solid;
@@ -49,16 +48,19 @@
   border-color: dodgerblue;
 }
 
-.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.form-control::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #cfcfcf;
   opacity: 1; /* Firefox */
 }
 
-.form-control::-ms-input-placeholder { /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
   color: #cfcfcf;
 }
 
-.form-control::-ms-input-placeholder { /* Microsoft Edge */
+.form-control::-ms-input-placeholder {
+  /* Microsoft Edge */
   color: #cfcfcf;
 }
 
@@ -256,85 +258,85 @@ li a:hover {
 }
 
 .advantages-box-wish {
-    margin: 0 0 30px 0;
-    width: 100%;
-    background: white;
-    padding: 30px 20px 10px;
-    text-align: center;
-    -webkit-box-shadow: 0px 0px 0px 2px rgba(255,255,255,0.2);
-    box-shadow: 0px 0px 0px 2px rgba(255,255,255,0.2);
-    border-radius: 5px;
-    -webkit-transition: all 0.5s;
-    transition: all 0.9s;
-    position: relative;
-    z-index: 1;
+  margin: 0 0 30px 0;
+  width: 100%;
+  background: white;
+  padding: 30px 20px 10px;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.9s;
+  position: relative;
+  z-index: 1;
 }
 
 .advantages-box-wish::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 0;
-    border-radius: 4px;
-    -webkit-transition: all 0.5s;
-    transition: all 0.9s;
-    z-index: -1;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  border-radius: 4px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.9s;
+  z-index: -1;
 }
 
 .advantages-box-wish:hover {
-    -webkit-transform: translateY(-5px);
-    transform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .advantages-box-wish .icon {
-    border-radius: 50%;
-    border: var(--bs-primary) solid 1px;
-    margin: 0 auto 20px;
-    height: 80px;
-    width: 80px;
-    line-height: 80px;
-    top: 0;
-    font-size: 35px;
-    color: #ccc;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
+  border-radius: 50%;
+  border: var(--bs-primary) solid 1px;
+  margin: 0 auto 20px;
+  height: 80px;
+  width: 80px;
+  line-height: 80px;
+  top: 0;
+  font-size: 35px;
+  color: #ccc;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .advantages-box-wish:hover .icon {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-    background: #fff;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  background: #fff;
 }
 
-.advantages-box-wish h5{
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
+.advantages-box-wish h5 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
-.advantages-box-wish h5 a{
-    color: #656565;
+.advantages-box-wish h5 a {
+  color: #656565;
 }
 
-.advantages-box-wish p{
-    font-size: 15px;
-    color: #fff;
-    opacity: 0.9;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
+.advantages-box-wish p {
+  font-size: 15px;
+  color: #fff;
+  opacity: 0.9;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .advantages-box-wish:hover::before {
-    height: 100%;
+  height: 100%;
 }
 
 .like-icon {
   position: absolute;
-  background-color: rgba(255,255,255,0.7);
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 50px;
   top: 10px;
   right: 10px;
@@ -346,10 +348,26 @@ li a:hover {
   color: var(--bs-primary);
 }
 
-.like-icon i{
+.like-icon i {
   font-size: 12px;
 }
 
 .relative-position {
   position: relative;
+}
+
+.accordion-button-style-heading {
+  padding: 1rem 1.25rem;
+  font-size: 20px;
+  font-weight: 500;
+  color: #212529;
+  text-align: left;
+  background-color: #ededed;
+  border-left: 10px var(--bs-primary) solid;
+  align-items: center;
+  width: 100%;
+}
+
+.accordion-container {
+  padding-bottom: 40px;
 }

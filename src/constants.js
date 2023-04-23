@@ -3,6 +3,102 @@ export const KEY = 'carz';
 export const SUCCESS = 'success';
 export const FAILURE = 'failure';
 
+export const CAR_OVERVIEW = [
+  'Owner',
+  'Kilometer Driven',
+  'Registered In',
+  'Fuel Type',
+  'Last Service',
+];
+
+export const CAR_KEY_SPECIFICATIONS = [
+  'Fuel Type',
+  'Engine Displacement (cc)',
+  'No. of cylinder',
+  'Max Power (bhp@rpm)',
+  'Seating Capacity',
+  'TransmissionType',
+  'Body Type',
+];
+
+export const CAR_KEY_FEATURES = [
+  'Anti Lock Braking System',
+  'Air Conditioner',
+  'Driver Airbag',
+  'Passenger Airbag',
+  'Alloy Wheels',
+  'Multi-function Steering Wheel',
+];
+
+export const CAR_ENGINE_AND_TRANSMISSION = [
+  'Displacement (cc)',
+  'Max Power',
+  'Max Torque',
+  'Valves Per Cylinder',
+  'Gear Box',
+  'Mild Hybrid',
+];
+
+export const CAR_COMFORT = [
+  'Air Conditioner',
+  'Heater',
+  'Accessory Power Outlet',
+  'Rear AC Vents',
+  'Cruise Control',
+  'Foldable Rear Seat',
+  'KeyLess Entry',
+  'Additional Features Comfort',
+];
+
+export const CAR_INTERIOR = [
+  'Fabric Upholstery',
+  'Outside Temperature Display',
+  'Driving Experience Control Eco',
+  'Height Adjustable Driver Seat',
+  'Additional Features Interior',
+];
+
+export const CAR_EXTERIOR = [
+  'Power Adjustable',
+  'Exterior Rear View Mirror',
+  'Electric Folding Rear View Mirror',
+  'Alloy Wheels',
+  'Outside Rear View Mirror Turn Indicators',
+  'Alloy Wheel Size',
+  'Tyre Size',
+  'Additional Features Exterior',
+];
+
+export const CAR_SAFETY = [
+  'Anti-Lock Braking System',
+  'Brake Assist',
+  'Central Locking',
+  'Power Door Locks',
+  'No of Airbags',
+  'Driver Airbag',
+  'Passenger Airbag',
+  'Vehicle Stability Control System',
+  'EBD',
+  'Advance Safety Features',
+  'Knee Airbags',
+  'Hill Assist',
+];
+
+export const CAR_COMMUNICATION = [
+  'Radio',
+  'Speakers Front',
+  'Speakers Rear',
+  'Integrated 2DIN Audio',
+  'USB & Auxiliary input',
+  'Bluetooth Connectivity',
+  'Touch Screen',
+  'Touch Screen size',
+  'Connectivity',
+  'Android Auto',
+  'Apple CarPlay',
+  'Additional Features',
+];
+
 export const CAR_ATTRIBUTES = [
   'Brand',
   'Model',
@@ -75,5 +171,5 @@ export const CAR_ATTRIBUTES = [
   'Additional Features Entertainment',
   'Pics',
   'Price',
-  'Description'
+  'Description',
 ];

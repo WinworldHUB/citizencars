@@ -13,6 +13,19 @@ import ImageCard from '../components/ImageCard';
 import { useEffect, useState } from 'react';
 import DBService from '../DBService';
 import numeral from 'numeral';
+import Icons from '../Icons';
+import {
+  CAR_COMFORT,
+  CAR_ENGINE_AND_TRANSMISSION,
+  CAR_INTERIOR,
+  CAR_EXTERIOR,
+  CAR_KEY_FEATURES,
+  CAR_KEY_SPECIFICATIONS,
+  CAR_OVERVIEW,
+  CAR_SAFETY,
+  CAR_COMMUNICATION,
+} from '../constants';
+import CarSpecifications from '../components/CarSpecifications';
 
 const teamMembers = [
   {
@@ -54,6 +67,7 @@ const CarDetail = (props) => {
   //const carIndex = index ?? 0;
 
   useEffect(() => {
+    setInProgressMessage('Loading car details ...');
     DBService.getCar(
       index,
       (response) => {
@@ -61,8 +75,8 @@ const CarDetail = (props) => {
         setInProgressMessage('');
       },
       (err) => {
-        setInProgressMessage(err.data);
-        setInProgressMessage('');
+        console.log(err.message ?? err);
+        setInProgressMessage(err.message ?? err);
       }
     );
   }, []);
@@ -89,9 +103,9 @@ const CarDetail = (props) => {
       <div className="bg-light">
         <div className="container py-5">
           <HeadingWithBorder title={car.Brand}>
-            <i class="fa-solid fa-indian-rupee-sign"></i>
+            <i className="fa-solid fa-indian-rupee-sign"></i>
             {` ${numeral(car['Price']).format('$ 0,0.00')} EMI STARTS WITH @ `}
-            <i class="fa-solid fa-indian-rupee-sign"></i>
+            <i className="fa-solid fa-indian-rupee-sign"></i>
             {` ${car.emi ?? 0}`}
           </HeadingWithBorder>
 
@@ -131,7 +145,224 @@ const CarDetail = (props) => {
         </div>
       </div>
       <div className="container py-5">
-        <HeadingWithBorder title="Specifications" />
+        {/* <HeadingWithBorder title="Specifications" /> */}
+        <div className="accordion-container">
+          <h3 className="accordion-button-style-heading">Overview</h3>
+          <div className="pt-5 row row-col-5">
+            {CAR_OVERVIEW.map((item, index) => (
+              <div className="col">
+                <IconTile
+                  icon={<Icons iconIndex={index} />}
+                  title={item}
+                  value={car[item]}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="accordion accordion-flush" id="accordionFlushExample">
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="flush-headingOne">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne"
+                aria-expanded="false"
+                aria-controls="flush-collapseOne"
+              >
+                Key Specifications
+              </button>
+            </h2>
+            <div
+              id="flush-collapseOne"
+              className="accordion-collapse collapse"
+              aria-labelledby="flush-headingOne"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div className="accordion-body">
+                <CarSpecifications
+                  specification={CAR_KEY_SPECIFICATIONS}
+                  car={car}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="flush-headingTwo">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwo"
+                aria-expanded="false"
+                aria-controls="flush-collapseTwo"
+              >
+                Key Features
+              </button>
+            </h2>
+            <div
+              id="flush-collapseTwo"
+              className="accordion-collapse collapse"
+              aria-labelledby="flush-headingTwo"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div className="accordion-body">
+                <CarSpecifications specification={CAR_KEY_FEATURES} car={car} />
+              </div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="flush-headingThree">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseThree"
+                aria-expanded="false"
+                aria-controls="flush-collapseThree"
+              >
+                Engine and Transmission
+              </button>
+            </h2>
+            <div
+              id="flush-collapseThree"
+              className="accordion-collapse collapse"
+              aria-labelledby="flush-headingThree"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div className="accordion-body">
+                <CarSpecifications
+                  specification={CAR_ENGINE_AND_TRANSMISSION}
+                  car={car}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="flush-heading4">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapse4"
+                aria-expanded="false"
+                aria-controls="flush-collapse4"
+              >
+                Comfort & Convenience
+              </button>
+            </h2>
+            <div
+              id="flush-collapse4"
+              className="accordion-collapse collapse"
+              aria-labelledby="flush-heading4"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div className="accordion-body">
+                <CarSpecifications specification={CAR_COMFORT} car={car} />
+              </div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="flush-heading5">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapse5"
+                aria-expanded="false"
+                aria-controls="flush-collapse5"
+              >
+                Interior
+              </button>
+            </h2>
+            <div
+              id="flush-collapse5"
+              className="accordion-collapse collapse"
+              aria-labelledby="flush-heading5"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div className="accordion-body">
+                <CarSpecifications specification={CAR_INTERIOR} car={car} />
+              </div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="flush-heading5">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapse6"
+                aria-expanded="false"
+                aria-controls="flush-collapse6"
+              >
+                Exterior
+              </button>
+            </h2>
+            <div
+              id="flush-collapse6"
+              className="accordion-collapse collapse"
+              aria-labelledby="flush-heading6"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div className="accordion-body">
+                <CarSpecifications specification={CAR_EXTERIOR} car={car} />
+              </div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="flush-heading5">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapse7"
+                aria-expanded="false"
+                aria-controls="flush-collapse7"
+              >
+                Safety
+              </button>
+            </h2>
+            <div
+              id="flush-collapse7"
+              className="accordion-collapse collapse"
+              aria-labelledby="flush-heading7"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div className="accordion-body">
+                <CarSpecifications specification={CAR_SAFETY} car={car} />
+              </div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="flush-heading5">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapse8"
+                aria-expanded="false"
+                aria-controls="flush-collapse8"
+              >
+                Entertainment & Communication
+              </button>
+            </h2>
+            <div
+              id="flush-collapse8"
+              className="accordion-collapse collapse"
+              aria-labelledby="flush-heading8"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div className="accordion-body">
+                <CarSpecifications
+                  specification={CAR_COMMUNICATION}
+                  car={car}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
         <br />
         <div className="row row-cols-5">
           {(car.carSpecs ?? []).map((specs) => (
