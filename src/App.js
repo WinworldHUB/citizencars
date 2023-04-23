@@ -9,11 +9,13 @@ import { createContext, useState } from 'react';
 import MyWishList from './pages/MyWishList';
 import Signout from './pages/Signout';
 import Admin from './pages/Admin';
+import { KEY } from './constants';
 
 export const LocalDataContext = createContext();
 
 function App() {
-  const [userId, setUserId] = useState();
+  const storedUserId = localStorage.getItem(KEY);
+  const [userId, setUserId] = useState(storedUserId ?? 0);
 
   return (
     <BrowserRouter>

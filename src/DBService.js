@@ -41,7 +41,7 @@ const DBService = {
 
   getCar: (SrNo, onSuccess, onFailure) => {
     axios
-      .post('/car', { SrNo: SrNo })
+      .get(`/car/${SrNo}`)
       .then((response) => {
         const responseValue = response.data;
         if (responseValue.status === FAILURE) {
@@ -75,6 +75,40 @@ const DBService = {
   uploadCars: (cars, onSuccess, onFailure) => {
     axios
       .post('/upload', cars)
+      .then((response) => {
+        const responseValue = response.data;
+        //console.log(responseValue);
+        if (responseValue.status === FAILURE) {
+          onFailure && onFailure(responseValue);
+        } else {
+          onSuccess && onSuccess(responseValue);
+        }
+      })
+      .catch((error) => {
+        onFailure && onFailure(error);
+      });
+  },
+
+  getMyWishList: (userId, onSuccess, onFailure) => {
+    axios
+      .get(`/getmywishlist/${userId}`)
+      .then((response) => {
+        const responseValue = response.data;
+        
+        if (responseValue.status === FAILURE) {
+          onFailure && onFailure(responseValue.data);
+        } else {
+          onSuccess && onSuccess(responseValue.data);
+        }
+      })
+      .catch((error) => {
+        onFailure && onFailure(error);
+      });
+  },
+
+  addToWishList: (userId, carId, onSuccess, onFailure) => {
+    axios
+      .post('/addtowishlist', { userId, carId })
       .then((response) => {
         const responseValue = response.data;
         //console.log(responseValue);

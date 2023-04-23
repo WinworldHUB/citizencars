@@ -26,6 +26,8 @@ import {
   CAR_COMMUNICATION,
 } from '../constants';
 import CarSpecifications from '../components/CarSpecifications';
+import { useContext } from 'react';
+import { LocalDataContext } from '../App';
 
 const teamMembers = [
   {
@@ -64,7 +66,7 @@ const CarDetail = (props) => {
   const { index } = useParams();
   const [inProgressMessage, setInProgressMessage] = useState('');
   const [car, setCar] = useState(null);
-  //const carIndex = index ?? 0;
+  const { userId } = useContext(LocalDataContext);
 
   useEffect(() => {
     setInProgressMessage('Loading car details ...');
@@ -80,6 +82,22 @@ const CarDetail = (props) => {
       }
     );
   }, []);
+
+  const addCarToWishList = () => {
+    setInProgressMessage('Adding car to wishlist ...');
+    DBService.addToWishList(
+      userId,
+      index,
+      (response) => {
+        console.log(response);
+        setInProgressMessage('');
+      },
+      (err) => {
+        console.log(err.message ?? err);
+        setInProgressMessage(err.message ?? err);
+      }
+    );
+  };
 
   if (inProgressMessage !== '' || car === null) {
     return (
@@ -141,7 +159,15 @@ const CarDetail = (props) => {
               />
             </div>
           </div>
-          <p>{car.Description ?? ''}</p>
+          <p className="text-justify">{car.Description ?? ''}</p>
+          <div className="text-end">
+            <button
+              className="btn btn-primary rounded"
+              onClick={addCarToWishList}
+            >
+              Reserve this car
+            </button>
+          </div>
         </div>
       </div>
       <div className="container py-5">
