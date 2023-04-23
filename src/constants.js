@@ -74,5 +74,6 @@ export const CAR_ATTRIBUTES = [
   'Apple CarPlay',
   'Additional Features Entertainment',
   'Pics',
-  'Price'
+  'Price',
+  'Description'
 ];

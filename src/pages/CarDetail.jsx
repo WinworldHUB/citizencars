@@ -127,7 +127,7 @@ const CarDetail = (props) => {
               />
             </div>
           </div>
-          <p>{car.description ?? ''}</p>
+          <p>{car.Description ?? ''}</p>
         </div>
       </div>
       <div className="container py-5">
