@@ -1,5 +1,5 @@
 import { forwardRef, useContext } from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { LocalDataContext } from '../App';
 
 const Header = forwardRef((props, ref) => {
@@ -48,7 +48,7 @@ const Header = forwardRef((props, ref) => {
                 <Link className="nav-link bg-light b-0" to="/signin">
                   Wishlist
                 </Link>
-                {userId && (
+                {userId ? (
                   <ul class="dropdown-menu">
                     <li>
                       <Link class="dropdown-item" to="/signout">
@@ -56,6 +56,8 @@ const Header = forwardRef((props, ref) => {
                       </Link>
                     </li>
                   </ul>
+                ) : (
+                  <></>
                 )}
               </li>
             </ul>
@@ -66,5 +68,5 @@ const Header = forwardRef((props, ref) => {
   );
 });
 
-Header.displayName = "Header";
+Header.displayName = 'Header';
 export default Header;
