@@ -1,12 +1,12 @@
 const Footer = () => {
   return (
     <>
-      <div className="container-fluid container-primary wish-footer">
+      <div className="container-md-fluid container-primary wish-footer">
         <div className="row d-flex justify-content-between align-items-center">
-          <div className="col-md-3">
+          <div className="col-lg-4 col-md-5">
             <div className="d-flex justify-content-between">
               <span className="display-7 text-thin text-white">
-                Follow us:{" "}
+                Follow us:{' '}
               </span>
               <button className="btn btn-outline-light rounded">
                 <i className="fa-solid fa-envelope"></i>
@@ -19,8 +19,8 @@ const Footer = () => {
               </button>
             </div>
           </div>
-          <div className="col-md-5">&nbsp;</div>
-          <div className="col-md-4 text-end">
+          <div className="col-lg-4 col-md-2">&nbsp;</div>
+          <div className="col-lg-4 col-md-5 text-end">
             <div className="input-group rounded">
               <input
                 type="text"
@@ -38,9 +38,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="content-area-fluid container-fluid">
+      <div className="content-area-fluid container-md-fluid">
         <div className="row">
-          <div className="col-2">
+          <div className="col-md-2 col-xs-6">
             <h5 className="text-bold">Luxury cars</h5>
             <ul>
               <li>
@@ -72,7 +72,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-2">
+          <div className="col-md-2 col-xs-6">
             <h5 className="text-bold">General</h5>
             <ul>
               <li>
@@ -108,7 +108,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-2">
+          <div className="col-md-2 col-xs-6">
             <h5 className="text-bold">Style</h5>
             <ul>
               <li>
@@ -140,7 +140,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-2">
+          <div className="col-md-2 col-xs-6">
             <h5 className="text-bold">Brands</h5>
             <ul>
               <li>
@@ -184,7 +184,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-2">
+          <div className="col-md-2 col-xs-6">
             <h5 className="text-bold">&nbsp;</h5>
             <ul>
               <li>
@@ -228,7 +228,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-2">
+          <div className="col-md-2 col-xs-6">
             <h5 className="text-bold">&nbsp;</h5>
             <ul>
               <li>
@@ -273,7 +273,7 @@ const Footer = () => {
       </div>
       <div className="content-area-fluid container-fluid bg-grey-3">
         <div className="row">
-          <div className="col-3">
+          <div className="col-md-3 col-xs-6">
             <h6 className="text-bold">Headquarters</h6>
             <p>
               Plot No. 134, Sector 37, Pace City 1, Gurgaon Haryana. 122001,
@@ -281,21 +281,21 @@ const Footer = () => {
             </p>
             <p>sales@XYZ.com</p>
           </div>
-          <div className="col-3">
+          <div className="col-md-3 col-xs-6">
             <h6 className="text-bold">Studio</h6>
             <p>
               Plot No. 134, Sector 37, Pace City 1, Gurgaon Haryana. 122001,
               India
             </p>
           </div>
-          <div className="col-3">
+          <div className="col-md-3 col-xs-6">
             <h6 className="text-bold">Sell Car</h6>
             <p>
               Plot No. 134, Sector 37, Pace City 1, Gurgaon Haryana. 122001,
               India
             </p>
           </div>
-          <div className="col-3">
+          <div className="col-md-3 col-xs-6">
             <h6 className="text-bold">Vintage Car</h6>
             <p>(+91) 9999 99999 89</p>
           </div>

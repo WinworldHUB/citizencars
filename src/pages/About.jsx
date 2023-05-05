@@ -1,4 +1,5 @@
-import BGImageSection from "../components/BGImageSection";
+//import BGImageSection from "../components/BGImageSection";
+import BGImageSection2 from "../components/BGImageSection2";
 import TeamMember from "../components/TeamMember";
 import DefaultLayout from "../layouts/DefaultLayout";
 
@@ -28,8 +29,8 @@ const teamMembers = [
 const About = () => {
   return (
     <DefaultLayout isTopMarginRequired={true}>
-      <BGImageSection imgSrc="assets/img/sections/bg-01.png">
-        <div className="container pt-10">
+      <BGImageSection2 imgSrc="assets/img/sections/bg-01.png">
+        <div className="container pt-md-10">
           <div className="row g-0">
             <div className="col-md-5">
               <h1 className="display-1 text-dark-grey text-thin pb-5">
@@ -60,8 +61,8 @@ const About = () => {
             </div>
           </div>
         </div>
-      </BGImageSection>
-      <BGImageSection imgSrc="assets/img/sections/bg-02.jpg">
+      </BGImageSection2>
+      <BGImageSection2 imgSrc="assets/img/sections/bg-02.jpg">
         <div className="container pt-10">
           <div className="row g-0">
             <div className="offset-md-7 col-md-5 text-end">
@@ -82,7 +83,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </BGImageSection>
+      </BGImageSection2>
 
       <div className="our-team content-area">
         <div className="container">

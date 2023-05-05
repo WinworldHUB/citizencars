@@ -9,8 +9,11 @@ import { LocalDataContext } from '../App';
 import { useNavigate } from 'react-router-dom';
 import { KEY } from '../constants';
 import Dialog from '../components/Dialog';
+import { useMediaQuery } from 'react-responsive';
 
 const Signin = () => {
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+
   const { userId, setUserId } = useContext(LocalDataContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -18,8 +21,7 @@ const Signin = () => {
   const [notification, setNotification] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
   const navigate = useNavigate();
-
-  //console.log(userId);
+  
   useEffect(() => {
     if (userId) {
       navigate('/mywish');
@@ -44,10 +46,10 @@ const Signin = () => {
           style={{
             backgroundColor: 'rgba(240, 240, 240, 0.7)',
             position: 'absolute',
-            right: '50px',
+            right: isTabletOrMobile ? '25px' : '50px',
+            left: isTabletOrMobile ? '25px' : '70%',
             backdropFilter: 'blur(5px)',
             minHeight: '70%',
-            width: '30%',
           }}
         >
           <h3>Log in to your account</h3>

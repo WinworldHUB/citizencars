@@ -6,8 +6,11 @@ import { useState } from 'react';
 import Dialog from '../components/Dialog';
 import DBService from '../DBService';
 import Notification from '../components/Notification';
+import { useMediaQuery } from 'react-responsive';
 
 const Signup = () => {
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [phone, setPhone] = useState('');
@@ -82,10 +85,10 @@ const Signup = () => {
             backgroundColor: 'rgba(240, 240, 240, 0.1)',
             position: 'absolute',
             top: '10px',
-            right: '50px',
+            right: isTabletOrMobile ? '5%' : '50px',
+            left: isTabletOrMobile ? '5%' : '70%',
             backdropFilter: 'blur(5px)',
             minHeight: '70%',
-            width: '30%',
           }}
         >
           <h3 className="text-white">Log in to your account</h3>

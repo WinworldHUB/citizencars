@@ -5,10 +5,13 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import DefaultLayout from '../layouts/DefaultLayout';
-import BGOverlaySection from '../components/BGOverlaySection';
 import data from '../Data.json';
+import { useMediaQuery } from 'react-responsive';
+import BGOverlaySection2 from '../components/BGOverlaySection2';
 
 const Home = () => {
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 760px)' });
   return (
     <DefaultLayout isTopMarginRequired={false}>
       <div className="banner" id="banner4">
@@ -18,13 +21,13 @@ const Home = () => {
           data-ride="carousel"
         >
           <div className="carousel-inner text-center">
-            <div className="carousel-item banner-max-height active item-bg">
+            <div className="carousel-item banner-max-height active item-bg d-flex flex-column justify-content-between relative-position">
               <img
                 className="d-block w-100 h-100"
                 src="/assets/img/cars/car-homepage-hero.png"
                 alt="banner"
               />
-              <div className="carousel-content container text-center banner-info-2 bi-2 text-white d-flex flex-column justify-content-between h-100">
+              <div className="carousel-content container text-center banner-info-2 bi-2 text-white h-100">
                 <div className="pt-5">
                   <p className="text-white display-5">
                     Purchase car fast like a{' '}
@@ -37,12 +40,15 @@ const Home = () => {
                     house.
                   </p>
                 </div>
-                <div className="container-fluid pb-5">
+                <div
+                  className="container-fluid pb-5"
+                  style={{ position: 'absolute', bottom: '10px', right: '0' }}
+                >
                   <div className="row g-0">
                     <div className="col-12 p-3">
                       Over 1000 Used Cars Purchased
                     </div>
-                    <div className="col-2 offset-md-1">
+                    <div className="col-sm-2 offset-md-1">
                       <div className="form-group">
                         <select className="form-control" name="select-brand">
                           <option>Select Brand</option>
@@ -53,7 +59,7 @@ const Home = () => {
                         </select>
                       </div>
                     </div>
-                    <div className="col-2">
+                    <div className="col-sm-2">
                       <div className="form-group">
                         <select className="form-control" name="select-brand">
                           <option>Select Make</option>
@@ -64,7 +70,7 @@ const Home = () => {
                         </select>
                       </div>
                     </div>
-                    <div className="col-2">
+                    <div className="col-sm-2">
                       <div className="form-group">
                         <select className="form-control" name="select-brand">
                           <option>Select Location</option>
@@ -75,7 +81,7 @@ const Home = () => {
                         </select>
                       </div>
                     </div>
-                    <div className="col-2">
+                    <div className="col-sm-2">
                       <div className="form-group">
                         <select className="form-control" name="select-brand">
                           <option>Select Year</option>
@@ -86,7 +92,7 @@ const Home = () => {
                         </select>
                       </div>
                     </div>
-                    <div className="col-2">
+                    <div className="col-sm-2">
                       <div className="form-group">
                         <button className="btn btn-primary form-control search-button">
                           <i className="fa fa-search text-white"></i> Find
@@ -188,7 +194,7 @@ const Home = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-6">
+          <div className="col-md-6">
             <div className="card card-about shadow-sm text-center">
               <div className="card-body">
                 <h1 className="display-1">20+</h1>
@@ -213,7 +219,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="col-6">
+          <div className="col-md-6">
             <img
               className="slide-photo"
               src="/assets/img/car-about-01.png"
@@ -369,8 +375,8 @@ const Home = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-8 offset-2">
-              <div className="row row-cols-3">
+            <div className="col-sm-8 offset-md-2">
+              <div className="row row-cols-md-3">
                 <div className="col pb-md-4">
                   <div className="advantages-box-wish h-100">
                     <div className="icon">
@@ -440,7 +446,7 @@ const Home = () => {
               modules={[Navigation, Scrollbar, Pagination]}
               loop={true}
               spaceBetween={0}
-              slidesPerView={3}
+              slidesPerView={isTabletOrMobile ? 1 : 3}
               navigation={true}
               keyboard={{
                 enabled: true,
@@ -527,26 +533,6 @@ const Home = () => {
                       <div className="like-icon">
                         <i class="fa-solid fa-heart"></i>
                       </div>
-                      <div className="post-meta clearfix">
-                        <span>
-                          <a href="javascript;">
-                            <i className="flaticon-user-1"></i>
-                          </a>
-                          Admin
-                        </span>
-                        <span>
-                          <a href="javascript;">
-                            <i className="flaticon-comment"></i>
-                          </a>
-                          17K
-                        </span>
-                        <span>
-                          <a href="javascript;">
-                            <i className="flaticon-calendar"></i>
-                          </a>
-                          73k
-                        </span>
-                      </div>
                     </div>
                     <div className="detail">
                       <p>JAGUAR XDRIVER30D DPE SIGNATURE 1</p>
@@ -562,10 +548,10 @@ const Home = () => {
         </div>
       </div>
 
-      <BGOverlaySection>
+      <BGOverlaySection2>
         <div className="container">
           <div className="row">
-            <div className="col-lg-5 align-self-center">
+            <div className="col-sm-5 align-self-center">
               <div className="main-title">
                 <h5 className="text-uppercase text-light-80">How it works</h5>
                 <h2 className="pb-4">Our Advantages</h2>
@@ -582,9 +568,9 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="col-lg-7">
-              <div className="row">
-                <div className="col-lg-6 col-md-6 col-sm-12 pb-md-4">
+            <div className="col-sm-7 d-xs-none">
+              <div className="row g-3">
+                <div className="col-sm-6">
                   <div className="advantages-box h-100">
                     <div className="icon">
                       <i className="flaticon-shield"></i>
@@ -596,7 +582,7 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-6 col-md-6 col-sm-12 pb-md-4">
+                <div className="col-sm-6">
                   <div className="advantages-box h-100">
                     <div className="icon">
                       <i className="flaticon-deal"></i>
@@ -609,7 +595,7 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-6 col-md-6 col-sm-12">
+                <div className="col-sm-6">
                   <div className="advantages-box h-100">
                     <div className="icon">
                       <i className="flaticon-money"></i>
@@ -624,7 +610,7 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-6 col-md-6 col-sm-12">
+                <div className="col-sm-6">
                   <div className="advantages-box h-100">
                     <div className="icon">
                       <i className="flaticon-support-2"></i>
@@ -640,7 +626,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </BGOverlaySection>
+      </BGOverlaySection2>
 
       <div className="blog comon-slick content-area">
         <div className="container text-center">
@@ -664,7 +650,7 @@ const Home = () => {
             <Swiper
               modules={[Navigation, Scrollbar]}
               spaceBetween={0}
-              slidesPerView={2}
+              slidesPerView={isMobile ? 1 : 2}
               navigation={true}
             >
               <SwiperSlide>
